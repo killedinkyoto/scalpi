@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scalpi — Premium Liposomal Scalp Therapy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            parchment: '#F5F0E6',
+            forest:    '#1C3A2A',
+            amber:     '#B87A3D',
+            ink:       '#1A1A18',
+            sage:      '#3D6B52',
+            cream:     '#EDE6D6',
+            moss:      '#6B8F79',
+            bark:      '#7A5C3A',
+          },
+          fontFamily: {
+            garamond: ['"EB Garamond"', 'Georgia', 'serif'],
+            sans:     ['"DM Sans"', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: #F5F0E6; color: #1A1A18; font-family: 'DM Sans', system-ui, sans-serif; font-weight: 300; overflow-x: hidden; }
+
+    /* ── NAV ── */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: #F5F0E6; border-bottom: 1px solid #1C3A2A18; }
+    .nav-inner { max-width: 1280px; margin: 0 auto; padding: 0 48px; height: 68px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-family: 'EB Garamond', serif; font-size: 22px; font-weight: 500; color: #1C3A2A; letter-spacing: -0.02em; }
+    .nav-links { display: flex; gap: 36px; }
+    .nav-links a { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #3D6B52; text-decoration: none; font-weight: 500; }
+    .nav-cta { background: #1C3A2A; color: #F5F0E6; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; padding: 11px 28px; border: none; cursor: pointer; }
+    .nav-cta:hover { background: #2D5240; }
+
+    /* ── HERO ── */
+    .hero { padding-top: 68px; background: #1C3A2A; min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; align-items: center; }
+    .hero-left { padding: 80px 64px 80px 80px; }
+    .hero-tag { display: inline-flex; align-items: center; gap: 8px; border: 1px solid #6B8F7944; padding: 6px 14px; margin-bottom: 36px; }
+    .hero-tag span { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #6B8F79; font-weight: 500; }
+    .hero-h1 { font-family: 'EB Garamond', serif; font-size: clamp(44px, 4.5vw, 72px); line-height: 1.02; letter-spacing: -0.025em; color: #F5F0E6; font-weight: 500; margin-bottom: 28px; }
+    .hero-h1 em { color: #B87A3D; font-style: italic; }
+    .hero-sub { font-size: 15px; line-height: 1.75; color: #6B8F79; margin-bottom: 48px; max-width: 480px; }
+    .hero-stats { display: flex; gap: 0; margin-bottom: 48px; border: 1px solid #6B8F7930; }
+    .hero-stat { padding: 20px 28px; border-right: 1px solid #6B8F7930; flex: 1; }
+    .hero-stat:last-child { border-right: none; }
+    .hero-stat-num { font-family: 'EB Garamond', serif; font-size: 28px; color: #B87A3D; font-weight: 500; line-height: 1; margin-bottom: 4px; }
+    .hero-stat-label { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #6B8F79; }
+    .hero-btns { display: flex; gap: 12px; }
+    .btn-hero-primary { background: #B87A3D; color: #F5F0E6; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; padding: 16px 36px; border: none; cursor: pointer; }
+    .btn-hero-secondary { background: transparent; color: #F5F0E6; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; padding: 15px 36px; border: 1px solid #F5F0E630; cursor: pointer; }
+    .hero-right { position: relative; height: 100vh; overflow: hidden; }
+    .hero-right img { width: 100%; height: 100%; object-fit: cover; opacity: 0.7; mix-blend-mode: luminosity; }
+    .hero-right::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, #1C3A2A 0%, transparent 40%); }
+
+    /* ── TRUST BAR ── */
+    .trust-bar { background: #EDE6D6; border-bottom: 1px solid #1C3A2A15; }
+    .trust-inner { max-width: 1280px; margin: 0 auto; padding: 0 48px; height: 60px; display: flex; align-items: center; justify-content: center; gap: 48px; }
+    .trust-item { display: flex; align-items: center; gap: 8px; }
+    .trust-dot { width: 5px; height: 5px; background: #B87A3D; border-radius: 0; flex-shrink: 0; }
+    .trust-text { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #3D6B52; font-weight: 500; white-space: nowrap; }
+
+    /* ── SHARED ── */
+    .section { max-width: 1280px; margin: 0 auto; padding: 120px 48px; }
+    .section-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #3D6B52; font-weight: 500; margin-bottom: 24px; display: flex; align-items: center; gap: 12px; }
+    .section-label::before { content: ''; display: block; width: 32px; height: 1px; background: #B87A3D; }
+    .section-h2 { font-family: 'EB Garamond', serif; font-size: clamp(36px, 4vw, 60px); line-height: 1.08; letter-spacing: -0.02em; color: #1C3A2A; font-weight: 500; }
+    .section-h2 em { font-style: italic; color: #B87A3D; }
+    .divider { border: none; border-top: 1px solid #1C3A2A18; }
+
+    /* ── PROBLEM ── */
+    .problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: #1C3A2A15; margin-top: 64px; }
+    .problem-card { background: #F5F0E6; padding: 40px; }
+    .problem-card-label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #B87A3D; font-weight: 500; margin-bottom: 16px; }
+    .problem-card-title { font-family: 'EB Garamond', serif; font-size: 22px; color: #1C3A2A; font-weight: 500; margin-bottom: 12px; }
+    .problem-card-body { font-size: 14px; line-height: 1.75; color: #3D6B52; }
+
+    /* ── CORRUPTION (DARK SECTION) ── */
+    .dark-section { background: #1C3A2A; }
+    .dark-section .section-label { color: #6B8F79; }
+    .dark-section .section-label::before { background: #B87A3D; }
+    .dark-section .section-h2 { color: #F5F0E6; }
+    .failure-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: #F5F0E615; margin-top: 64px; }
+    .failure-card { background: #1C3A2A; padding: 40px; border: 1px solid #F5F0E610; }
+    .failure-card-type { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #6B8F79; font-weight: 500; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #F5F0E615; }
+    .failure-card-title { font-family: 'EB Garamond', serif; font-size: 20px; color: #F5F0E6; font-weight: 500; margin-bottom: 16px; }
+    .failure-card-body { font-size: 14px; line-height: 1.75; color: #6B8F79; }
+    .failure-stat { font-family: 'EB Garamond', serif; font-size: 48px; color: #B87A3D; font-weight: 500; line-height: 1; margin-top: 32px; display: block; }
+
+    /* ── SCIENCE ── */
+    .science-split { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; margin-top: 64px; }
+    .science-num { font-family: 'EB Garamond', serif; font-size: clamp(80px, 10vw, 140px); color: #1C3A2A; font-weight: 500; line-height: 1; letter-spacing: -0.03em; margin-bottom: 8px; }
+    .science-num span { color: #B87A3D; }
+    .science-comparison { display: flex; flex-direction: column; gap: 2px; margin-top: 40px; }
+    .science-bar-row { display: grid; grid-template-columns: 140px 1fr 60px; align-items: center; gap: 16px; padding: 12px 0; border-bottom: 1px solid #1C3A2A15; }
+    .science-bar-label { font-size: 12px; color: #3D6B52; font-weight: 500; }
+    .science-bar-track { background: #EDE6D6; height: 6px; position: relative; }
+    .science-bar-fill { height: 100%; position: absolute; left: 0; top: 0; }
+    .science-bar-val { font-family: 'EB Garamond', serif; font-size: 16px; color: #1C3A2A; text-align: right; font-weight: 500; }
+
+    /* ── TIMELINE ── */
+    .timeline-wrap { max-width: 640px; margin: 80px auto 0; position: relative; padding: 0 0 0 32px; }
+    .timeline-spine { position: absolute; left: 0; top: 0; bottom: 0; width: 1px; background: #1C3A2A18; }
+    .timeline-progress { position: absolute; left: 0; top: 0; width: 1px; background: #B87A3D; height: 0; transition: height 0.1s linear; }
+    .timeline-item { position: relative; margin-bottom: 72px; opacity: 1; transform: translateY(0); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .timeline-item.animate-out { opacity: 0; transform: translateY(20px); }
+    .timeline-item.visible { opacity: 1; transform: translateY(0); }
+    .timeline-item:last-child { margin-bottom: 0; }
+    .timeline-node { position: absolute; left: -38px; top: 6px; width: 12px; height: 12px; border: 2px solid #1C3A2A18; background: #F5F0E6; transition: border-color 0.4s, background 0.4s; }
+    .timeline-item.visible .timeline-node { border-color: #B87A3D; background: #B87A3D; }
+    .timeline-badge { display: inline-block; background: #1C3A2A; color: #F5F0E6; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; padding: 5px 12px; font-weight: 500; margin-bottom: 16px; }
+    .timeline-item.visible .timeline-badge { background: #B87A3D; }
+    .timeline-title { font-family: 'EB Garamond', serif; font-size: 24px; color: #1C3A2A; font-weight: 500; margin-bottom: 10px; }
+    .timeline-body { font-size: 14px; line-height: 1.75; color: #3D6B52; max-width: 480px; }
+
+    /* ── INGREDIENTS ── */
+    .ingredients-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: #1C3A2A15; margin-top: 64px; }
+    .ingredient-card { background: #F5F0E6; padding: 36px 32px; }
+    .ingredient-icon { width: 40px; height: 40px; border: 1px solid #1C3A2A20; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+    .ingredient-name { font-family: 'EB Garamond', serif; font-size: 18px; color: #1C3A2A; font-weight: 500; margin-bottom: 8px; }
+    .ingredient-aka { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #B87A3D; margin-bottom: 12px; font-weight: 500; }
+    .ingredient-body { font-size: 13px; line-height: 1.7; color: #3D6B52; }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials-wrap { background: #EDE6D6; }
+    .testimonials-inner { max-width: 1280px; margin: 0 auto; padding: 120px 48px; }
+    .testimonial-slider { margin-top: 64px; position: relative; }
+    .testimonial-track { display: flex; gap: 0; overflow: hidden; }
+    .testimonial-slide { min-width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    .before-after { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+    .before-after-img { position: relative; overflow: hidden; aspect-ratio: 3/4; background: #1C3A2A20; }
+    .before-after-img img { width: 100%; height: 100%; object-fit: cover; }
+    .before-after-label { position: absolute; bottom: 12px; left: 12px; background: #1C3A2A; color: #F5F0E6; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; padding: 5px 10px; font-weight: 500; }
+    .testimonial-content { padding-top: 16px; }
+    .testimonial-stars { display: flex; gap: 3px; margin-bottom: 24px; }
+    .star { width: 14px; height: 14px; background: #B87A3D; clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); }
+    .testimonial-quote { font-family: 'EB Garamond', serif; font-size: 22px; line-height: 1.5; color: #1C3A2A; font-weight: 400; margin-bottom: 28px; }
+    .testimonial-author { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #3D6B52; font-weight: 500; margin-bottom: 24px; }
+    .testimonial-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .testimonial-tag { border: 1px solid #1C3A2A30; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; padding: 5px 12px; color: #3D6B52; font-weight: 500; }
+    .slider-controls { display: flex; gap: 12px; margin-top: 48px; }
+    .slider-btn { width: 48px; height: 48px; border: 1px solid #1C3A2A30; background: transparent; cursor: pointer; display: flex; align-items: center; justify-content: center; color: #1C3A2A; font-size: 18px; }
+    .slider-btn:hover { background: #1C3A2A; color: #F5F0E6; }
+    .slider-count { display: flex; align-items: center; gap: 12px; margin-left: 16px; }
+    .slider-dot { width: 6px; height: 6px; background: #1C3A2A20; cursor: pointer; }
+    .slider-dot.active { background: #B87A3D; }
+
+    /* ── VS TABLE ── */
+    .vs-table { width: 100%; border-collapse: collapse; margin-top: 64px; }
+    .vs-table th { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; padding: 16px 24px; text-align: left; border-bottom: 2px solid #1C3A2A; }
+    .vs-table th:first-child { color: #3D6B52; }
+    .vs-table th.scalpi-col { color: #F5F0E6; background: #1C3A2A; }
+    .vs-table td { padding: 18px 24px; font-size: 13px; border-bottom: 1px solid #1C3A2A10; vertical-align: top; line-height: 1.6; color: #3D6B52; }
+    .vs-table td.scalpi-col { background: #1C3A2A08; color: #1C3A2A; font-weight: 500; }
+    .vs-table tr:hover td { background: #EDE6D6; }
+    .vs-table tr:hover td.scalpi-col { background: #1C3A2A15; }
+    .check { color: #3D6B52; font-weight: 600; }
+    .cross { color: #C4714A; }
+
+    /* ── PURCHASE ── */
+    .purchase-section { background: #1C3A2A; }
+    .purchase-inner { max-width: 1280px; margin: 0 auto; padding: 120px 48px; }
+    .purchase-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: #F5F0E615; margin-top: 64px; }
+    .purchase-card { background: #1C3A2A; border: 1px solid #F5F0E610; padding: 48px 36px; position: relative; }
+    .purchase-card.featured { border-color: #B87A3D; }
+    .purchase-badge { position: absolute; top: -1px; left: 50%; transform: translateX(-50%); background: #B87A3D; color: #F5F0E6; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; padding: 5px 16px; font-weight: 500; white-space: nowrap; }
+    .purchase-bottles { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #6B8F79; font-weight: 500; margin-bottom: 16px; }
+    .purchase-price { font-family: 'EB Garamond', serif; font-size: 48px; color: #F5F0E6; font-weight: 500; line-height: 1; margin-bottom: 4px; }
+    .purchase-per { font-size: 12px; color: #6B8F79; margin-bottom: 32px; }
+    .purchase-features { display: flex; flex-direction: column; gap: 10px; margin-bottom: 36px; }
+    .purchase-feature { font-size: 13px; color: #6B8F79; display: flex; align-items: center; gap: 10px; }
+    .purchase-feature::before { content: '✦'; color: #B87A3D; font-size: 9px; }
+    .btn-purchase { width: 100%; background: #F5F0E6; color: #1C3A2A; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; padding: 15px; border: none; cursor: pointer; }
+    .purchase-card.featured .btn-purchase { background: #B87A3D; color: #F5F0E6; }
+    .btn-purchase:hover { opacity: 0.9; }
+
+    /* ── FAQ ── */
+    .faq-item { border-bottom: 1px solid #1C3A2A15; }
+    .faq-q { display: flex; justify-content: space-between; align-items: center; padding: 24px 0; cursor: pointer; gap: 24px; }
+    .faq-q-text { font-family: 'EB Garamond', serif; font-size: 20px; color: #1C3A2A; font-weight: 500; line-height: 1.3; }
+    .faq-icon { width: 24px; height: 24px; border: 1px solid #1C3A2A30; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 14px; color: #1C3A2A; transition: transform 0.3s; }
+    .faq-a { font-size: 14px; line-height: 1.8; color: #3D6B52; padding-bottom: 24px; display: none; max-width: 760px; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    .faq-item.open .faq-a { display: block; }
+
+    /* ── FOOTER ── */
+    footer { background: #1A1A18; padding: 64px 48px 40px; }
+    .footer-inner { max-width: 1280px; margin: 0 auto; }
+    .footer-top { display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 48px; border-bottom: 1px solid #F5F0E610; margin-bottom: 40px; }
+    .footer-logo { font-family: 'EB Garamond', serif; font-size: 28px; color: #F5F0E6; font-weight: 500; letter-spacing: -0.02em; margin-bottom: 12px; }
+    .footer-tagline { font-size: 12px; color: #6B8F79; letter-spacing: 0.06em; }
+    .footer-links { display: flex; gap: 32px; }
+    .footer-links a { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #6B8F79; text-decoration: none; font-weight: 500; }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; }
+    .footer-copy { font-size: 12px; color: #3D6B52; }
+    .footer-disclaimer { font-size: 11px; color: #3D6B52; max-width: 560px; line-height: 1.6; text-align: right; }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════
+     NAV
+══════════════════════════════════════ -->
+<nav>
+  <div class="nav-inner">
+    <span class="nav-logo">Scalpi</span>
+    <div class="nav-links">
+      <a href="#science">The Science</a>
+      <a href="#ingredients">Ingredients</a>
+      <a href="#results">Results</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <button class="nav-cta">Begin the Ritual →</button>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════
+     HERO
+══════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-tag">
+      <span>✦ Liposomal Transfollicular Delivery</span>
+    </div>
+    <h1 class="hero-h1">
+      Your scalp has been<br/>
+      <em>suffocated</em><br/>
+      for years.
+    </h1>
+    <p class="hero-sub">
+      Standard topicals — the oils, the serums, the supplements — reach 0.3% of your follicle depth. Scalpi's liposomal system reaches 70%. That is the only number that matters.
+    </p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-num">70%</div>
+        <div class="hero-stat-label">Follicle Depth</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">30 nm</div>
+        <div class="hero-stat-label">Vesicle Size</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">60 sec</div>
+        <div class="hero-stat-label">Evening Ritual</div>
+      </div>
+    </div>
+    <div class="hero-btns">
+      <button class="btn-hero-primary">Claim Your Supply</button>
+      <button class="btn-hero-secondary">Read the Science</button>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img src="https://placehold.co/800x900/1C3A2A/3D6B52?text=." alt="Scalpi product" />
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     TRUST BAR
+══════════════════════════════════════ -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item"><div class="trust-dot"></div><span class="trust-text">40+ Peer-Reviewed Studies</span></div>
+    <div class="trust-item"><div class="trust-dot"></div><span class="trust-text">No Greasiness. No Dread Shed.</span></div>
+    <div class="trust-item"><div class="trust-dot"></div><span class="trust-text">Zero Systemic Toxins</span></div>
+    <div class="trust-item"><div class="trust-dot"></div><span class="trust-text">Bypasses Liver &amp; GI Tract</span></div>
+    <div class="trust-item"><div class="trust-dot"></div><span class="trust-text">Free of SLS &amp; Silicones</span></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     THE PROBLEM
+══════════════════════════════════════ -->
+<section id="science">
+  <div class="section">
+    <div class="section-label">01 — The Root Cause</div>
+    <h2 class="section-h2">What is really<br/>happening beneath<br/><em>your scalp.</em></h2>
+    <div style="max-width:600px; margin-top:24px;">
+      <p style="font-size:15px; line-height:1.8; color:#3D6B52;">Your hair strand is dead keratin. The only living, metabolically active organ is the follicle — buried deep in the dermal layer. During perimenopause, estrogen decline triggers rapid scalp ageing. The dermal layer thins. Chronic micro-inflammation begins. The follicle starves.</p>
+    </div>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="problem-card-label">Occlusive Barrier Effect</div>
+        <div class="problem-card-title">The Plastic Wrap Over Your Scalp</div>
+        <div class="problem-card-body">Every mainstream shampoo strips your scalp's lipid barrier with SLS. Conditioners compensate with Dimethicone — a non-water-soluble silicone that acts like plastic wrap, sealing sebum, DHT, and inflammatory residues inside your follicle pores.</div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-card-label">Follicular Senescence</div>
+        <div class="problem-card-title">Your Follicles Are Being Aged Prematurely</div>
+        <div class="problem-card-body">Trapped lipids oxidise into toxic lipid peroxides. These trigger chronic micro-inflammation and cellular senescence — a state where hair follicle cells permanently stop dividing, forcing follicles into the resting phase years ahead of schedule.</div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-card-label">DKK-1 Surges</div>
+        <div class="problem-card-title">The Protein Shutting Down Your Growth</div>
+        <div class="problem-card-body">Under oxidative stress, DKK-1 protein expression surges in your dermal papilla cells — the command centre of each follicle. DKK-1 is a biochemical stop signal that forces follicles to halt growth and enter premature regression. This is measurable. And reversible.</div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-card-label">The Penetration Problem</div>
+        <div class="problem-card-title">Why Nothing Has Worked</div>
+        <div class="problem-card-body">Standard topicals — serums, oils, sprays — cannot cross the stratum corneum. Clinical studies confirm that only 0.3% of standard unencapsulated topicals reach the dermal layer where your follicles actually live. The remaining 99.7% sits on the surface.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- ══════════════════════════════════════
+     WHY EVERYTHING FAILED (DARK)
+══════════════════════════════════════ -->
+<div class="dark-section">
+  <div class="section">
+    <div class="section-label">02 — Commercial Failure</div>
+    <h2 class="section-h2">Why the pills and<br/>oils made it<br/><em>worse.</em></h2>
+    <div class="failure-grid">
+      <div class="failure-card">
+        <div class="failure-card-type">Oral Supplements (Nutrafol, Viviscal)</div>
+        <div class="failure-card-title">4 Giant Capsules. Zero Follicular Reach.</div>
+        <div class="failure-card-body">High-dose oral hair supplements are processed by the liver before anything reaches your scalp. The biotin, iron, and herbal extracts that survive liver metabolism then enter systemic circulation — where they must compete with every other organ for delivery. Published case studies in <em>The American Journal of Gastroenterology</em> document acute hepatocellular injury. High-dose kelp disrupts thyroid function. The fishy aftertaste of shark cartilage is a feature, not a bug — it is evidence of what you are swallowing.</div>
+        <span class="failure-stat">0.3%</span>
+        <div style="font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:#6B8F79; margin-top:8px;">Effective delivery to follicle</div>
+      </div>
+      <div class="failure-card">
+        <div class="failure-card-type">Topical Oils (Mielle, Castor, Rosemary)</div>
+        <div class="failure-card-title">The Dread Shed You Cannot Explain.</div>
+        <div class="failure-card-body">Unrefined carrier oils — castor, coconut, jojoba — have high molecular weights. They cannot penetrate the stratum corneum. Instead, they travel up your hair shafts, weighing down fine, thinning hair and making thinning more visible. Worse: the occlusive lipid film feeds scalp yeast <em>Malassezia</em>, which converts oils into inflammatory free fatty acids — triggering the sudden shedding storm millions report after starting rosemary oil. The study brands cite? Conducted on three rodents. Compared against a sub-therapeutic dose of minoxidil designed to show no results.</div>
+        <span class="failure-stat">3</span>
+        <div style="font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:#6B8F79; margin-top:8px;">Rodents in the landmark "study"</div>
+      </div>
+      <div class="failure-card">
+        <div class="failure-card-type">The Medical System</div>
+        <div class="failure-card-title">"It's Just Ageing." The Most Expensive Lie.</div>
+        <div class="failure-card-body">Perimenopausal hair loss is systematically dismissed by general practitioners who refuse to run hormone, thyroid, or ferritin panels. Women spend an average of six years in active hair loss before they connect it to perimenopause. The diagnostic gap is not ignorance. It is a failure to treat women's biology with the same clinical seriousness as men's. Your hair loss is not ageing. It is a measurable, addressable inflammatory cascade — and it starts years before menopause is formally diagnosed.</div>
+        <span class="failure-stat">6 yrs</span>
+        <div style="font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:#6B8F79; margin-top:8px;">Average time before correct diagnosis</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     THE SCIENCE / LIPOSOMAL
+══════════════════════════════════════ -->
+<div>
+  <div class="section">
+    <div class="section-label">03 — The Mechanism</div>
+    <h2 class="section-h2">30 nanometres.<br/><em>70% depth.</em><br/>Nothing else comes close.</h2>
+    <div class="science-split">
+      <div>
+        <div class="science-num"><span>70</span>%</div>
+        <p style="font-size:15px; line-height:1.8; color:#3D6B52; margin-bottom:40px;">Liposomal formulations reach approximately 70% of the full follicle length — published in the <em>Journal of Investigative Dermatology</em>. Standard topicals reach 30%. The gap is not marginal. It is the difference between treating your scalp and treating your hair shaft.</p>
+        <div class="science-comparison">
+          <div class="science-bar-row">
+            <span class="science-bar-label">Scalpi Liposome</span>
+            <div class="science-bar-track">
+              <div class="science-bar-fill" style="width:70%; background:#1C3A2A;"></div>
+            </div>
+            <span class="science-bar-val">70%</span>
+          </div>
+          <div class="science-bar-row">
+            <span class="science-bar-label">Standard Serum</span>
+            <div class="science-bar-track">
+              <div class="science-bar-fill" style="width:30%; background:#B87A3D44;"></div>
+            </div>
+            <span class="science-bar-val">30%</span>
+          </div>
+          <div class="science-bar-row">
+            <span class="science-bar-label">Topical Oil</span>
+            <div class="science-bar-track">
+              <div class="science-bar-fill" style="width:0.3%; background:#B87A3D44;"></div>
+            </div>
+            <span class="science-bar-val">0.3%</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div style="background:#EDE6D6; padding:48px; display:flex; flex-direction:column; gap:32px;">
+          <div>
+            <div style="font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#B87A3D; font-weight:500; margin-bottom:12px;">Step 1 — Fluidisation</div>
+            <p style="font-size:14px; line-height:1.75; color:#3D6B52;">The phospholipid bilayer of each 30 nm liposome fuses with the lipid domains of the stratum corneum — the skin's outermost protective layer — temporarily fluidising the barrier to allow encapsulated actives to pass through.</p>
+          </div>
+          <div style="border-top:1px solid #1C3A2A15; padding-top:32px;">
+            <div style="font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#B87A3D; font-weight:500; margin-bottom:12px;">Step 2 — Follicular Ratchet</div>
+            <p style="font-size:14px; line-height:1.75; color:#3D6B52;">The hair follicle canal is a highly permeable pathway extending deep into the dermis. The mechanical movement of the hair shaft acts as a pump — guiding liposomes deep into the follicle through what researchers call the "ratchet effect."</p>
+          </div>
+          <div style="border-top:1px solid #1C3A2A15; padding-top:32px;">
+            <div style="font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#B87A3D; font-weight:500; margin-bottom:12px;">Step 3 — Targeted Release</div>
+            <p style="font-size:14px; line-height:1.75; color:#3D6B52;">Niacinamide, Retinol, EGCG, and Vitamin E are released directly onto the active matrix cells at the base of the follicle — bypassing systemic circulation, the liver, and the GI tract entirely.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     INGREDIENTS
+══════════════════════════════════════ -->
+<hr class="divider" />
+<div id="ingredients">
+  <div class="section">
+    <div class="section-label">04 — The Formula</div>
+    <h2 class="section-h2">Seven actives.<br/><em>One delivery system.</em><br/>Zero compromise.</h2>
+    <div class="ingredients-grid">
+      <div class="ingredient-card">
+        <div class="ingredient-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="#1C3A2A" stroke-width="1"/><path d="M10 6v8M6 10h8" stroke="#B87A3D" stroke-width="1"/></svg>
+        </div>
+        <div class="ingredient-name">Niacinamide</div>
+        <div class="ingredient-aka">Vitamin B3</div>
+        <div class="ingredient-body">Reduces DKK-1 protein expression by 44.7% in dermal papilla cells — blocking the biochemical signal that forces follicles into premature regression. Clinically shown to improve hair thickness in 32% of participants.</div>
+      </div>
+      <div class="ingredient-card">
+        <div class="ingredient-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="3" y="3" width="14" height="14" stroke="#1C3A2A" stroke-width="1"/><path d="M7 10l3 3 3-5" stroke="#B87A3D" stroke-width="1"/></svg>
+        </div>
+        <div class="ingredient-name">Retinol</div>
+        <div class="ingredient-aka">Vitamin A</div>
+        <div class="ingredient-body">Activates Erk and Akt survival pathways in dermal papilla cells. Prevents apoptosis through Bcl-2/Bax upregulation. Clears dead keratinised buildup from follicle openings. Encapsulated to prevent the "retinoid paradox" shedding effect.</div>
+      </div>
+      <div class="ingredient-card">
+        <div class="ingredient-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><polygon points="10,2 18,18 2,18" stroke="#1C3A2A" stroke-width="1" fill="none"/><circle cx="10" cy="13" r="2" fill="#B87A3D"/></svg>
+        </div>
+        <div class="ingredient-name">EGCG</div>
+        <div class="ingredient-aka">Green Tea Extract</div>
+        <div class="ingredient-body">Promotes dermal papilla cell proliferation via VEGFA upregulation — enhancing blood flow and nutrient delivery to the follicle root. Naturally inhibits 5α-reductase, blocking the testosterone-to-DHT conversion that miniaturises follicles.</div>
+      </div>
+      <div class="ingredient-card">
+        <div class="ingredient-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2C10 2 4 7 4 12a6 6 0 0012 0c0-5-6-10-6-10z" stroke="#1C3A2A" stroke-width="1" fill="none"/></svg>
+        </div>
+        <div class="ingredient-name">Panax Ginseng</div>
+        <div class="ingredient-aka">Root Extract</div>
+        <div class="ingredient-body">Activates Wnt/β-catenin signalling — the primary pathway governing follicle regeneration. Ginsenosides Re, Rb1, and Rg3 increase dermal papilla cell viability and prevent catagen acceleration by restoring intracellular autophagy.</div>
+      </div>
+      <div class="ingredient-card">
+        <div class="ingredient-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="#1C3A2A" stroke-width="1"/><circle cx="10" cy="10" r="3" stroke="#B87A3D" stroke-width="1"/></svg>
+        </div>
+        <div class="ingredient-name">Tocopheryl Acetate</div>
+        <div class="ingredient-aka">Vitamin E</div>
+        <div class="ingredient-body">A fat-soluble antioxidant that inserts into the lipid bilayer of cellular membranes, protecting them from lipid peroxidation — the same oxidative process responsible for the inflammatory cascade that accelerates follicular senescence.</div>
+      </div>
+      <div class="ingredient-card">
+        <div class="ingredient-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 15L10 5l5 10" stroke="#1C3A2A" stroke-width="1"/><path d="M7 11h6" stroke="#B87A3D" stroke-width="1"/></svg>
+        </div>
+        <div class="ingredient-name">Ascorbyl Palmitate</div>
+        <div class="ingredient-aka">Vitamin C</div>
+        <div class="ingredient-body">A lipid-soluble form of Vitamin C that neutralises aqueous free radicals and regenerates oxidised Vitamin E back to active form — creating a double-action antioxidant loop that protects follicular stem cell DNA from cumulative oxidative damage.</div>
+      </div>
+      <div class="ingredient-card">
+        <div class="ingredient-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 3c0 0-5 3-5 8s5 7 5 7 5-2 5-7-5-8-5-8z" stroke="#1C3A2A" stroke-width="1" fill="none"/></svg>
+        </div>
+        <div class="ingredient-name">Calendula</div>
+        <div class="ingredient-aka">Flower Extract</div>
+        <div class="ingredient-body">Rich in anti-inflammatory carotenoids and flavonoids. Calms the scalp micro-inflammation that drives follicular senescence, soothes erythema, and accelerates tissue repair — restoring the scalp's epidermal barrier from the outside in.</div>
+      </div>
+      <div class="ingredient-card" style="background:#1C3A2A; display:flex; flex-direction:column; justify-content:center;">
+        <div style="font-family:'EB Garamond',serif; font-size:40px; color:#F5F0E6; font-weight:500; line-height:1; margin-bottom:16px;">2.7×</div>
+        <div style="font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#6B8F79; margin-bottom:16px;">Greater transdermal absorption than standard emulsions</div>
+        <div style="font-size:13px; color:#6B8F79; line-height:1.7;">All seven actives are encapsulated in 30–200 nm phospholipid liposomes with ≥±30 mV zeta potential for stability — and delivered transfollicularly in a single 60-second application.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     TIMELINE (Scrolling)
+══════════════════════════════════════ -->
+<hr class="divider" />
+<div id="results" style="background:#EDE6D6;">
+  <div class="section">
+    <div class="section-label">05 — The Protocol</div>
+    <h2 class="section-h2" style="text-align:center;">What to expect<br/>from the <em>60-second ritual.</em></h2>
+    <p style="font-size:15px; line-height:1.8; color:#3D6B52; text-align:center; max-width:520px; margin:24px auto 0;">Applied once each evening before bed — working in tandem with the body's peak nocturnal cellular regeneration cycle.</p>
+
+    <div class="timeline-wrap">
+      <div class="timeline-spine"></div>
+      <div class="timeline-progress" id="timelineProgress"></div>
+
+      <div class="timeline-item" data-timeline>
+        <div class="timeline-node"></div>
+        <div class="timeline-badge">Day 1</div>
+        <div class="timeline-title">The ritual begins.</div>
+        <div class="timeline-body">30 nm liposomes begin fluidising the stratum corneum on first application. The follicular ratchet effect draws encapsulated actives deep into the canal. No greasiness. Hair is styled as normal the following morning.</div>
+      </div>
+
+      <div class="timeline-item" data-timeline>
+        <div class="timeline-node"></div>
+        <div class="timeline-badge">Week 2–4</div>
+        <div class="timeline-title">Scalp environment shifts.</div>
+        <div class="timeline-body">Niacinamide begins downregulating DKK-1 protein expression. Scalp micro-inflammation begins to calm. The occlusive silicone barrier breaks down. Sebum production normalises. Many users report a notable reduction in scalp sensitivity and itching.</div>
+      </div>
+
+      <div class="timeline-item" data-timeline>
+        <div class="timeline-node"></div>
+        <div class="timeline-badge">Month 1–3</div>
+        <div class="timeline-title">Shedding slows. Dramatically.</div>
+        <div class="timeline-body">Follicles locked in premature regression begin re-entering the anagen (active growth) phase. The acute telogen effluvium — the shedding storm — begins to resolve. Shower drain accumulation visibly decreases. Part line begins to narrow.</div>
+      </div>
+
+      <div class="timeline-item" data-timeline>
+        <div class="timeline-node"></div>
+        <div class="timeline-badge">Month 3–6</div>
+        <div class="timeline-title">Density returns. Measurably.</div>
+        <div class="timeline-body">New growth becomes visible at the hairline and crown. Hair shaft diameter increases as dermal papilla cells — now protected from oxidative senescence by the Niacinamide/Vitamin E/EGCG complex — produce structurally thicker fibres. Ponytail circumference increases.</div>
+      </div>
+
+      <div class="timeline-item" data-timeline>
+        <div class="timeline-node"></div>
+        <div class="timeline-badge">Month 6+</div>
+        <div class="timeline-title">Biological agency reclaimed.</div>
+        <div class="timeline-body">The follicle ecosystem is restored. DKK-1 suppression is maintained. Wnt/β-catenin signalling — the pathway governing follicle regeneration — is sustained by the Ginseng complex. The morning mirror is no longer a source of dread.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     BEFORE / AFTER TESTIMONIALS
+══════════════════════════════════════ -->
+<div class="testimonials-wrap">
+  <div class="testimonials-inner">
+    <div class="section-label">06 — Results</div>
+    <h2 class="section-h2">Real follicles.<br/><em>Real data.</em></h2>
+
+    <div class="testimonial-slider">
+      <div class="testimonial-track" id="testimonialTrack">
+
+        <!-- Slide 1 -->
+        <div class="testimonial-slide">
+          <div class="before-after">
+            <div class="before-after-img">
+              <img src="https://placehold.co/400x533/EDE6D6/3D6B52?text=Before" alt="Before" />
+              <span class="before-after-label">Before</span>
+            </div>
+            <div class="before-after-img">
+              <img src="https://placehold.co/400x533/1C3A2A/6B8F79?text=3+Months" alt="3 Months" />
+              <span class="before-after-label">3 Months</span>
+            </div>
+          </div>
+          <div class="testimonial-content">
+            <div class="testimonial-stars">
+              <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
+            </div>
+            <p class="testimonial-quote">"I will take the hot flashes, the brain fog, the forgetfulness, even the weight gain. If I could just have my hair back. After three months with Scalpi — I do."</p>
+            <p class="testimonial-author">Margaret, 52 — Post-menopause</p>
+            <div class="testimonial-tags">
+              <span class="testimonial-tag">Shedding resolved</span>
+              <span class="testimonial-tag">Visibly thicker</span>
+              <span class="testimonial-tag">Part line narrowed</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="testimonial-slide">
+          <div class="before-after">
+            <div class="before-after-img">
+              <img src="https://placehold.co/400x533/EDE6D6/3D6B52?text=Before" alt="Before" />
+              <span class="before-after-label">Before</span>
+            </div>
+            <div class="before-after-img">
+              <img src="https://placehold.co/400x533/1C3A2A/6B8F79?text=4+Months" alt="4 Months" />
+              <span class="before-after-label">4 Months</span>
+            </div>
+          </div>
+          <div class="testimonial-content">
+            <div class="testimonial-stars">
+              <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
+            </div>
+            <p class="testimonial-quote">"My doctor told me nothing could be done until I was fully in menopause. I would have been bald by then. Scalpi gave me back hair I thought I had permanently lost."</p>
+            <p class="testimonial-author">Diane, 47 — Perimenopause</p>
+            <div class="testimonial-tags">
+              <span class="testimonial-tag">No more dread shed</span>
+              <span class="testimonial-tag">New hairline growth</span>
+              <span class="testimonial-tag">Zero greasiness</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="testimonial-slide">
+          <div class="before-after">
+            <div class="before-after-img">
+              <img src="https://placehold.co/400x533/EDE6D6/3D6B52?text=Before" alt="Before" />
+              <span class="before-after-label">Before</span>
+            </div>
+            <div class="before-after-img">
+              <img src="https://placehold.co/400x533/1C3A2A/6B8F79?text=6+Months" alt="6 Months" />
+              <span class="before-after-label">6 Months</span>
+            </div>
+          </div>
+          <div class="testimonial-content">
+            <div class="testimonial-stars">
+              <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
+            </div>
+            <p class="testimonial-quote">"I had stopped going to outdoor events because I was terrified the wind would expose my scalp. Six months later I went to my daughter's wedding with my hair down. That is what Scalpi did for me."</p>
+            <p class="testimonial-author">Carol, 55 — Post-menopause</p>
+            <div class="testimonial-tags">
+              <span class="testimonial-tag">Full density restored</span>
+              <span class="testimonial-tag">Crown regrowth</span>
+              <span class="testimonial-tag">Confidence returned</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex; align-items:center; justify-content:space-between; margin-top:48px;">
+        <div class="slider-controls">
+          <button class="slider-btn" id="sliderPrev">←</button>
+          <button class="slider-btn" id="sliderNext">→</button>
+        </div>
+        <div class="slider-count">
+          <div class="slider-dot active" data-slide="0"></div>
+          <div class="slider-dot" data-slide="1"></div>
+          <div class="slider-dot" data-slide="2"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     VS TABLE
+══════════════════════════════════════ -->
+<div>
+  <div class="section">
+    <div class="section-label">07 — The Comparison</div>
+    <h2 class="section-h2">Scalpi vs.<br/><em>everything you've tried.</em></h2>
+    <table class="vs-table">
+      <thead>
+        <tr>
+          <th></th>
+          <th class="scalpi-col">Scalpi</th>
+          <th>Oral Supplements</th>
+          <th>Topical Oils</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Follicle penetration depth</strong></td>
+          <td class="scalpi-col"><span class="check">✓</span> 70% of follicle length</td>
+          <td><span class="cross">✗</span> Systemic only — follicle delivery indirect</td>
+          <td><span class="cross">✗</span> 0.3% — surface only</td>
+        </tr>
+        <tr>
+          <td><strong>Greasiness / hair weight</strong></td>
+          <td class="scalpi-col"><span class="check">✓</span> Absorbs in 60 seconds. Hair styled normally.</td>
+          <td><span class="check">✓</span> No topical residue</td>
+          <td><span class="cross">✗</span> Heavy, flat, separated hair</td>
+        </tr>
+        <tr>
+          <td><strong>GI &amp; liver safety</strong></td>
+          <td class="scalpi-col"><span class="check">✓</span> Bypasses GI tract and liver entirely</td>
+          <td><span class="cross">✗</span> Documented liver enzyme elevation. GI distress.</td>
+          <td><span class="check">✓</span> No systemic absorption</td>
+        </tr>
+        <tr>
+          <td><strong>Dread shed risk</strong></td>
+          <td class="scalpi-col"><span class="check">✓</span> Liposomes bypass surface. No shedding trigger.</td>
+          <td>—</td>
+          <td><span class="cross">✗</span> Occlusion triggers acute telogen effluvium</td>
+        </tr>
+        <tr>
+          <td><strong>DKK-1 inhibition (measured)</strong></td>
+          <td class="scalpi-col"><span class="check">✓</span> 44.7% reduction via Niacinamide</td>
+          <td><span class="cross">✗</span> Not targeted</td>
+          <td><span class="cross">✗</span> Not targeted</td>
+        </tr>
+        <tr>
+          <td><strong>Daily time commitment</strong></td>
+          <td class="scalpi-col"><span class="check">✓</span> 60 seconds, once daily</td>
+          <td>4 capsules, twice daily</td>
+          <td><span class="cross">✗</span> 20–30 min application + styling repair</td>
+        </tr>
+        <tr>
+          <td><strong>Thyroid / allergen risk</strong></td>
+          <td class="scalpi-col"><span class="check">✓</span> Zero systemic toxins. No shellfish. No kelp.</td>
+          <td><span class="cross">✗</span> Kelp disrupts thyroid. Shark cartilage allergen.</td>
+          <td><span class="check">✓</span> Low systemic risk</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     PURCHASE
+══════════════════════════════════════ -->
+<div class="purchase-section">
+  <div class="purchase-inner">
+    <div class="section-label">08 — Begin the Ritual</div>
+    <h2 class="section-h2">Choose your supply.<br/><em>Start tonight.</em></h2>
+    <div class="purchase-grid">
+      <div class="purchase-card">
+        <div class="purchase-bottles">1 Bottle — 30 Day Supply</div>
+        <div class="purchase-price">$79</div>
+        <div class="purchase-per">$79 / bottle</div>
+        <div class="purchase-features">
+          <div class="purchase-feature">30 ml Liposomal Scalp Therapy</div>
+          <div class="purchase-feature">Free shipping</div>
+          <div class="purchase-feature">60-day money-back guarantee</div>
+        </div>
+        <button class="btn-purchase">Add to Ritual</button>
+      </div>
+      <div class="purchase-card featured">
+        <div class="purchase-badge">Most Popular</div>
+        <div class="purchase-bottles">3 Bottles — 90 Day Supply</div>
+        <div class="purchase-price">$199</div>
+        <div class="purchase-per" style="color:#B87A3D;">$66 / bottle — Save $38</div>
+        <div class="purchase-features">
+          <div class="purchase-feature">3 × 30 ml Liposomal Scalp Therapy</div>
+          <div class="purchase-feature">Free priority shipping</div>
+          <div class="purchase-feature">60-day money-back guarantee</div>
+          <div class="purchase-feature">Full clinical protocol (Months 1–3)</div>
+        </div>
+        <button class="btn-purchase">Add to Ritual</button>
+      </div>
+      <div class="purchase-card">
+        <div class="purchase-bottles">6 Bottles — 180 Day Supply</div>
+        <div class="purchase-price">$349</div>
+        <div class="purchase-per">$58 / bottle — Save $125</div>
+        <div class="purchase-features">
+          <div class="purchase-feature">6 × 30 ml Liposomal Scalp Therapy</div>
+          <div class="purchase-feature">Free priority shipping</div>
+          <div class="purchase-feature">60-day money-back guarantee</div>
+          <div class="purchase-feature">Full restoration protocol (Months 1–6)</div>
+          <div class="purchase-feature">Priority access to future formulations</div>
+        </div>
+        <button class="btn-purchase">Add to Ritual</button>
+      </div>
+    </div>
+    <p style="font-size:12px; color:#6B8F79; text-align:center; margin-top:32px; letter-spacing:0.04em;">
+      Secure checkout · No aggressive subscription model · Cancel anytime
+    </p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     FAQ
+══════════════════════════════════════ -->
+<div id="faq">
+  <div class="section">
+    <div class="section-label">09 — Questions</div>
+    <h2 class="section-h2" style="margin-bottom:64px;">We are serious<br/>about facts. <em>Ask away.</em></h2>
+
+    <div class="faq-item">
+      <div class="faq-q">
+        <span class="faq-q-text">How is Scalpi different from rosemary oil or other topical hair serums?</span>
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-a">Standard topical serums and oils cannot cross the stratum corneum — the skin's outermost protective barrier. Clinical studies confirm that only 0.3% of unencapsulated topicals reach the dermal layer where hair follicles reside. Scalpi uses a liposomal delivery system: 30–200 nm phospholipid vesicles that fuse with skin lipids, travel the follicular canal via the ratchet effect, and deposit active compounds directly at the dermal papilla — reaching approximately 70% of follicle depth. No unencapsulated topical achieves this.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">
+        <span class="faq-q-text">Will it make my hair greasy or require changes to my styling routine?</span>
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-a">No. This is one of the core technical advantages of the liposomal formulation. Unlike castor, jojoba, or coconut oils — which have high molecular weights and sit on the hair shaft — Scalpi's ultralight lipid matrix absorbs completely into the scalp in under 60 seconds. The formula does not travel up the hair shaft. Hair can be styled as normal the following morning with no residue, weight, or separation.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">
+        <span class="faq-q-text">I've tried Nutrafol and Viviscal. Why would this be different?</span>
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-a">Oral hair supplements face a fundamental bioavailability problem. They are processed by the liver before entering systemic circulation, where they must compete with every other organ system for delivery. The active compounds that survive first-pass hepatic metabolism then travel throughout the bloodstream — only a fraction ever reaches the scalp, and none is targeted to individual follicles. Scalpi bypasses the GI tract and liver entirely. The actives are delivered transfollicularly — directly to the dermal papilla — at 2.7× greater absorption than standard emulsions.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">
+        <span class="faq-q-text">How long before I see results?</span>
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-a">The hair growth cycle means visible results require patience regardless of the intervention. Most users report a measurable reduction in shedding within 2–4 weeks. Visible density improvements typically emerge between months 3 and 6, as follicles re-enter and complete full anagen cycles. The 6-bottle supply is recommended for a complete follicular restoration protocol.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">
+        <span class="faq-q-text">Is there a risk of a "dread shed" like I experienced with rosemary oil?</span>
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-a">No. The dread shed associated with heavy topical oils results from follicular occlusion: the lipid film blocks pores, feeds Malassezia yeast, and triggers an inflammatory shedding response. Scalpi's liposomes bypass the scalp surface entirely — they do not sit on the skin, do not block follicle openings, and do not create an occlusive barrier. The formula is designed to reverse follicular suffocation, not replicate it.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">
+        <span class="faq-q-text">Is this safe if I have thyroid concerns or shellfish allergies?</span>
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-a">Yes. Scalpi contains zero kelp, iodine, shark cartilage, or oyster powder — the ingredients linked to thyroid disruption and shellfish allergen reactions in oral supplements like Viviscal. The formula is topically applied and does not enter systemic circulation, eliminating the organ stress concerns associated with oral hair nutraceuticals.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     FOOTER
+══════════════════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">Scalpi</div>
+        <div class="footer-tagline">Premium Liposomal Scalp Therapy</div>
+      </div>
+      <div class="footer-links">
+        <a href="#">The Science</a>
+        <a href="#">Ingredients</a>
+        <a href="#">Results</a>
+        <a href="#">FAQ</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 Scalpi. All rights reserved.</p>
+      <p class="footer-disclaimer">These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease. Individual results may vary.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════════════════════════════════
+     JAVASCRIPT
+══════════════════════════════════════ -->
+<script>
+  // ── SCROLLING TIMELINE ──
+  const timelineItems = document.querySelectorAll('[data-timeline]');
+  const timelineProgress = document.getElementById('timelineProgress');
+  const timelineWrap = document.querySelector('.timeline-wrap');
+
+  function updateTimeline() {
+    if (!timelineWrap) return;
+    const wrapRect = timelineWrap.getBoundingClientRect();
+    const wrapTop = wrapRect.top;
+    const wrapHeight = wrapRect.height;
+    const windowH = window.innerHeight;
+
+    const scrolledIn = Math.max(0, windowH * 0.8 - wrapTop);
+    const progress = Math.min(1, scrolledIn / wrapHeight);
+    timelineProgress.style.height = (progress * 100) + '%';
+
+    timelineItems.forEach(item => {
+      const rect = item.getBoundingClientRect();
+      if (rect.top < windowH * 0.82) {
+        item.classList.add('visible');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', updateTimeline, { passive: true });
+  updateTimeline();
+
+  // ── TESTIMONIAL SLIDER ──
+  const track = document.getElementById('testimonialTrack');
+  const dots = document.querySelectorAll('.slider-dot');
+  let current = 0;
+  const total = 3;
+
+  function goToSlide(n) {
+    current = (n + total) % total;
+    track.style.transform = `translateX(-${current * 100}%)`;
+    track.style.transition = 'transform 0.5s cubic-bezier(0.4,0,0.2,1)';
+    dots.forEach((d, i) => d.classList.toggle('active', i === current));
+  }
+
+  document.getElementById('sliderPrev').addEventListener('click', () => goToSlide(current - 1));
+  document.getElementById('sliderNext').addEventListener('click', () => goToSlide(current + 1));
+  dots.forEach(dot => dot.addEventListener('click', () => goToSlide(+dot.dataset.slide)));
+
+  // ── FAQ ACCORDION ──
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.closest('.faq-item');
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+</script>
+
+</body>
+</html>
