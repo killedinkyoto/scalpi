@@ -205,6 +205,118 @@
     .footer-bottom { display: flex; justify-content: space-between; align-items: center; }
     .footer-copy { font-size: 12px; color: #3D6B52; }
     .footer-disclaimer { font-size: 11px; color: #3D6B52; max-width: 560px; line-height: 1.6; text-align: right; }
+
+    /* ══════════════════════════════════════
+       TABLET  ≤ 1024px
+    ══════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .nav-links { display: none; }
+      .nav-inner { padding: 0 32px; }
+      .hero-left { padding: 60px 40px 60px 40px; }
+      .section { padding: 96px 40px; }
+      .failure-grid { grid-template-columns: 1fr; }
+      .ingredients-grid { grid-template-columns: repeat(2, 1fr); }
+      .testimonial-slide { grid-template-columns: 1fr; gap: 40px; }
+      .purchase-grid { grid-template-columns: 1fr; max-width: 480px; margin-left: auto; margin-right: auto; }
+      .purchase-inner { padding: 96px 40px; }
+      .testimonials-inner { padding: 96px 40px; }
+      .footer-top { flex-direction: column; gap: 32px; }
+      .footer-links { flex-wrap: wrap; gap: 20px; }
+      .footer-bottom { flex-direction: column; gap: 16px; align-items: flex-start; }
+      .footer-disclaimer { text-align: left; max-width: 100%; }
+    }
+
+    /* ══════════════════════════════════════
+       MOBILE  ≤ 768px
+    ══════════════════════════════════════ */
+    @media (max-width: 768px) {
+      /* Nav */
+      .nav-inner { padding: 0 20px; height: 60px; }
+      .nav-cta { padding: 9px 16px; font-size: 11px; }
+
+      /* Hero */
+      .hero { grid-template-columns: 1fr; min-height: auto; padding-top: 60px; }
+      .hero-left { padding: 48px 20px 56px; }
+      .hero-right { display: none; }
+      .hero-h1 { font-size: clamp(36px, 9vw, 52px); margin-bottom: 20px; }
+      .hero-sub { font-size: 14px; margin-bottom: 32px; }
+      .hero-stats { margin-bottom: 32px; }
+      .hero-stat { padding: 16px 14px; }
+      .hero-stat-num { font-size: 22px; }
+      .hero-stat-label { font-size: 10px; }
+      .hero-btns { flex-direction: column; gap: 10px; }
+      .btn-hero-primary { padding: 16px 24px; text-align: center; }
+      .btn-hero-secondary { padding: 15px 24px; text-align: center; }
+
+      /* Trust bar */
+      .trust-inner { overflow-x: auto; justify-content: flex-start; padding: 0 20px; gap: 28px; height: auto; padding-top: 14px; padding-bottom: 14px; -webkit-overflow-scrolling: touch; }
+      .trust-inner::-webkit-scrollbar { display: none; }
+
+      /* Sections */
+      .section { padding: 64px 20px; }
+      .section-h2 { font-size: clamp(30px, 8vw, 48px); }
+
+      /* Problem */
+      .problem-grid { grid-template-columns: 1fr; margin-top: 40px; }
+      .problem-card { padding: 28px 24px; }
+
+      /* Failure */
+      .failure-grid { grid-template-columns: 1fr; margin-top: 40px; }
+      .failure-card { padding: 28px 24px; }
+
+      /* Science */
+      .science-split { grid-template-columns: 1fr; gap: 40px; margin-top: 40px; }
+      .science-bar-row { grid-template-columns: 100px 1fr 44px; gap: 10px; }
+      .science-bar-label { font-size: 11px; }
+
+      /* Timeline */
+      .timeline-wrap { max-width: 100%; padding: 0 0 0 24px; margin-top: 48px; }
+      .timeline-node { left: -30px; }
+      .timeline-body { max-width: 100%; }
+
+      /* Ingredients */
+      .ingredients-grid { grid-template-columns: 1fr 1fr; margin-top: 40px; }
+      .ingredient-card { padding: 24px 20px; }
+
+      /* Testimonials */
+      .testimonials-inner { padding: 64px 20px; }
+      .testimonial-slider { margin-top: 40px; }
+      .testimonial-slide { grid-template-columns: 1fr; gap: 32px; }
+      .testimonial-quote { font-size: 18px; }
+      .slider-controls { margin-top: 32px; }
+
+      /* VS table — horizontal scroll */
+      .vs-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 40px; }
+      .vs-table-wrap::-webkit-scrollbar { height: 3px; }
+      .vs-table-wrap::-webkit-scrollbar-thumb { background: #1C3A2A30; }
+      .vs-table { margin-top: 0; min-width: 640px; }
+
+      /* Purchase */
+      .purchase-inner { padding: 64px 20px; }
+      .purchase-grid { grid-template-columns: 1fr; max-width: 100%; }
+      .purchase-card { padding: 36px 24px; }
+      .purchase-card.featured { order: -1; }
+
+      /* FAQ */
+      .faq-q-text { font-size: 17px; }
+
+      /* Footer */
+      footer { padding: 48px 20px 32px; }
+      .footer-top { flex-direction: column; gap: 24px; padding-bottom: 32px; margin-bottom: 28px; }
+      .footer-links { flex-wrap: wrap; gap: 16px; }
+      .footer-bottom { flex-direction: column; gap: 12px; align-items: flex-start; }
+      .footer-disclaimer { text-align: left; max-width: 100%; }
+    }
+
+    /* ══════════════════════════════════════
+       SMALL MOBILE  ≤ 390px
+    ══════════════════════════════════════ */
+    @media (max-width: 390px) {
+      .hero-stats { flex-direction: column; border: none; gap: 0; }
+      .hero-stat { border-right: none; border-bottom: 1px solid #6B8F7930; }
+      .hero-stat:last-child { border-bottom: none; }
+      .ingredients-grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -641,6 +753,7 @@
   <div class="section">
     <div class="section-label">07 — The Comparison</div>
     <h2 class="section-h2">Scalpi vs.<br/><em>everything you've tried.</em></h2>
+    <div class="vs-table-wrap">
     <table class="vs-table">
       <thead>
         <tr>
@@ -695,6 +808,7 @@
         </tr>
       </tbody>
     </table>
+    </div>
   </div>
 </div>
 
