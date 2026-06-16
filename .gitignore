@@ -1,7 +1,6 @@
 node_modules/
-temporary screenshots/
-*.png
-*.jpg
-*.jpeg
+temporary screenshots/*.png
+temporary screenshots/*.jpg
+temporary screenshots/*.jpeg
 .DS_Store
 Thumbs.db
