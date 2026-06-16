@@ -204,6 +204,41 @@
     .faq-item.open .faq-icon span { transform: rotate(45deg); }
     .faq-item.open .faq-a { display: block; }
 
+    /* ── EMAIL MODAL ── */
+    .email-modal-overlay { position: fixed; inset: 0; background: #1A1A18CC; z-index: 200; display: flex; align-items: center; justify-content: center; padding: 24px; opacity: 0; visibility: hidden; transition: opacity 0.35s ease; }
+    .email-modal-overlay.active { opacity: 1; visibility: visible; }
+    .email-modal { background: #F5F0E6; max-width: 440px; width: 100%; position: relative; padding: 48px 40px; border: 1px solid #1C3A2A20; transform: translateY(12px); transition: transform 0.35s ease; }
+    .email-modal-overlay.active .email-modal { transform: translateY(0); }
+    .email-modal-close { position: absolute; top: 20px; right: 20px; width: 28px; height: 28px; border: 1px solid #1C3A2A30; background: transparent; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 16px; color: #1C3A2A; }
+    .email-modal-close:hover { background: #1C3A2A; color: #F5F0E6; }
+    .email-modal-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #B87A3D; font-weight: 500; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+    .email-modal-title { font-family: 'EB Garamond', serif; font-size: 32px; line-height: 1.15; letter-spacing: -0.02em; color: #1C3A2A; font-weight: 500; margin-bottom: 14px; }
+    .email-modal-title em { font-style: italic; color: #B87A3D; }
+    .email-modal-body { font-size: 14px; line-height: 1.7; color: #3D6B52; margin-bottom: 28px; }
+    .email-modal-form { display: flex; flex-direction: column; gap: 10px; }
+    .email-modal-input { width: 100%; padding: 14px 16px; border: 1px solid #1C3A2A30; background: #F5F0E6; font-size: 14px; font-family: 'DM Sans', sans-serif; color: #1A1A18; }
+    .email-modal-input:focus { outline: none; border-color: #B87A3D; }
+    .email-modal-submit { width: 100%; background: #B87A3D; color: #F5F0E6; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; padding: 15px; border: none; cursor: pointer; }
+    .email-modal-submit:hover { opacity: 0.92; }
+    .email-modal-fine { font-size: 11px; color: #6B8F79; margin-top: 16px; text-align: center; }
+    .email-modal-error { font-size: 12px; color: #C4714A; margin-top: 8px; display: none; }
+    .email-modal-code { font-family: 'EB Garamond', serif; font-size: 30px; letter-spacing: 0.08em; color: #B87A3D; font-weight: 500; border: 1px dashed #B87A3D60; padding: 16px; text-align: center; margin-bottom: 20px; }
+    .email-modal-shop-btn { display: block; width: 100%; text-align: center; background: #1C3A2A; color: #F5F0E6; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; padding: 15px; text-decoration: none; }
+    .email-modal-shop-btn:hover { background: #2D5240; }
+
+    /* ── FOOTER EMAIL CAPTURE ── */
+    .footer-email { background: #22281F; border: 1px solid #F5F0E615; padding: 36px 40px; margin-bottom: 40px; display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
+    .footer-email-copy { max-width: 380px; }
+    .footer-email-label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #B87A3D; font-weight: 500; margin-bottom: 10px; }
+    .footer-email-title { font-family: 'EB Garamond', serif; font-size: 22px; color: #F5F0E6; font-weight: 500; }
+    .footer-email-form { display: flex; gap: 10px; flex: 1; min-width: 280px; max-width: 420px; }
+    .footer-email-input { flex: 1; padding: 13px 16px; border: 1px solid #F5F0E630; background: transparent; font-size: 13px; font-family: 'DM Sans', sans-serif; color: #F5F0E6; }
+    .footer-email-input::placeholder { color: #6B8F79; }
+    .footer-email-input:focus { outline: none; border-color: #B87A3D; }
+    .footer-email-submit { background: #B87A3D; color: #F5F0E6; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; padding: 13px 22px; border: none; cursor: pointer; white-space: nowrap; }
+    .footer-email-submit:hover { opacity: 0.92; }
+    .footer-email-success { font-size: 13px; color: #B87A3D; display: none; }
+
     /* ── FOOTER ── */
     footer { background: #1A1A18; padding: 64px 48px 40px; }
     .footer-inner { max-width: 1280px; margin: 0 auto; }
@@ -314,6 +349,12 @@
       .footer-links { flex-wrap: wrap; gap: 16px; }
       .footer-bottom { flex-direction: column; gap: 12px; align-items: flex-start; }
       .footer-disclaimer { text-align: left; max-width: 100%; }
+
+      /* Email modal + footer capture */
+      .email-modal { padding: 36px 24px; }
+      .email-modal-title { font-size: 26px; }
+      .footer-email { flex-direction: column; align-items: stretch; padding: 28px 24px; margin-bottom: 28px; }
+      .footer-email-form { flex-direction: column; max-width: 100%; }
     }
 
     /* ══════════════════════════════════════
@@ -1089,6 +1130,17 @@
 ══════════════════════════════════════ -->
 <footer>
   <div class="footer-inner">
+    <div class="footer-email">
+      <div class="footer-email-copy">
+        <div class="footer-email-label">✦ Get 10% Off</div>
+        <div class="footer-email-title">Join the list. Get a one-time code for 10% off your first order.</div>
+      </div>
+      <form class="footer-email-form" id="footerEmailForm">
+        <input type="email" class="footer-email-input" id="footerEmailInput" placeholder="Your email address" required />
+        <button type="submit" class="footer-email-submit">Get Code</button>
+      </form>
+      <p class="footer-email-success" id="footerEmailSuccess">Code sent: <strong>SCALPI10</strong>. Check your inbox.</p>
+    </div>
     <div class="footer-top">
       <div>
         <div class="footer-logo">Scalpi</div>
@@ -1108,6 +1160,35 @@
     </div>
   </div>
 </footer>
+
+<!-- ══════════════════════════════════════
+     EMAIL CAPTURE MODAL
+══════════════════════════════════════ -->
+<div class="email-modal-overlay" id="emailModalOverlay">
+  <div class="email-modal">
+    <button class="email-modal-close" id="emailModalClose" aria-label="Close">×</button>
+
+    <div id="emailModalForm">
+      <div class="email-modal-label">✦ Before You Go</div>
+      <h3 class="email-modal-title">Get <em>10% off</em><br/>your first order.</h3>
+      <p class="email-modal-body">Join the list for early access to new research and a one-time discount code, sent straight to your inbox.</p>
+      <form id="emailModalFormEl">
+        <input type="email" class="email-modal-input" id="emailModalInput" placeholder="Your email address" required />
+        <p class="email-modal-error" id="emailModalError">Please enter a valid email address.</p>
+        <button type="submit" class="email-modal-submit" style="margin-top:10px;">Send My Code</button>
+      </form>
+      <p class="email-modal-fine">No spam. Unsubscribe anytime.</p>
+    </div>
+
+    <div id="emailModalSuccess" style="display:none;">
+      <div class="email-modal-label">✦ Code Sent</div>
+      <h3 class="email-modal-title">Here is your <em>10% off.</em></h3>
+      <div class="email-modal-code">SCALPI10</div>
+      <p class="email-modal-body">Use this code at checkout. We have also emailed you a copy.</p>
+      <a href="#purchase" class="email-modal-shop-btn" id="emailModalShopBtn">Shop Now</a>
+    </div>
+  </div>
+</div>
 
 <!-- ══════════════════════════════════════
      JAVASCRIPT
@@ -1172,6 +1253,80 @@
     header.addEventListener('click', () => {
       header.closest('.ingredient-accordion-item').classList.toggle('open');
     });
+  });
+
+  // ── EMAIL CAPTURE ──
+  const DISCOUNT_CODE = 'SCALPI10';
+  const isValidEmail = email => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+  function markSubscribed() {
+    localStorage.setItem('scalpiEmailSubscribed', '1');
+  }
+  function hasSubscribed() {
+    return localStorage.getItem('scalpiEmailSubscribed') === '1';
+  }
+  function hasDismissedRecently() {
+    const dismissedAt = +localStorage.getItem('scalpiEmailDismissedAt');
+    return dismissedAt && (Date.now() - dismissedAt) < 7 * 24 * 60 * 60 * 1000;
+  }
+
+  // Modal
+  const emailModalOverlay = document.getElementById('emailModalOverlay');
+  const emailModalClose = document.getElementById('emailModalClose');
+  const emailModalFormEl = document.getElementById('emailModalFormEl');
+  const emailModalInput = document.getElementById('emailModalInput');
+  const emailModalError = document.getElementById('emailModalError');
+  const emailModalForm = document.getElementById('emailModalForm');
+  const emailModalSuccess = document.getElementById('emailModalSuccess');
+
+  function openEmailModal() {
+    emailModalOverlay.classList.add('active');
+  }
+  function closeEmailModal() {
+    emailModalOverlay.classList.remove('active');
+    if (!hasSubscribed()) localStorage.setItem('scalpiEmailDismissedAt', String(Date.now()));
+  }
+
+  if (!hasSubscribed() && !hasDismissedRecently()) {
+    let shown = false;
+    window.addEventListener('scroll', () => {
+      if (shown) return;
+      if (window.scrollY > 600) {
+        shown = true;
+        openEmailModal();
+      }
+    }, { passive: true });
+  }
+
+  emailModalClose.addEventListener('click', closeEmailModal);
+  emailModalOverlay.addEventListener('click', e => { if (e.target === emailModalOverlay) closeEmailModal(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && emailModalOverlay.classList.contains('active')) closeEmailModal(); });
+
+  emailModalFormEl.addEventListener('submit', e => {
+    e.preventDefault();
+    const email = emailModalInput.value.trim();
+    if (!isValidEmail(email)) {
+      emailModalError.style.display = 'block';
+      return;
+    }
+    emailModalError.style.display = 'none';
+    markSubscribed();
+    emailModalForm.style.display = 'none';
+    emailModalSuccess.style.display = 'block';
+  });
+
+  // Footer inline capture
+  const footerEmailForm = document.getElementById('footerEmailForm');
+  const footerEmailInput = document.getElementById('footerEmailInput');
+  const footerEmailSuccess = document.getElementById('footerEmailSuccess');
+
+  footerEmailForm.addEventListener('submit', e => {
+    e.preventDefault();
+    const email = footerEmailInput.value.trim();
+    if (!isValidEmail(email)) return;
+    markSubscribed();
+    footerEmailForm.style.display = 'none';
+    footerEmailSuccess.style.display = 'block';
   });
 </script>
 
