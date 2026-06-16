@@ -165,8 +165,8 @@
     /* ── TESTIMONIALS ── */
     .testimonials-wrap { background: #EDE6D6; }
     .testimonials-inner { max-width: 1280px; margin: 0 auto; padding: 120px 48px; }
-    .testimonial-slider { margin-top: 64px; position: relative; }
-    .testimonial-track { display: flex; gap: 0; overflow: hidden; }
+    .testimonial-slider { margin-top: 64px; position: relative; overflow: hidden; }
+    .testimonial-track { display: flex; gap: 0; }
     .testimonial-slide { min-width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
     .before-after { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
     .before-after-img { position: relative; overflow: hidden; aspect-ratio: 3/4; background: #1C3A2A20; border: 1px solid #1C3A2A20; }
@@ -947,6 +947,58 @@
             </div>
           </div>
         </div>
+
+        <!-- Slide 4 -->
+        <div class="testimonial-slide">
+          <div class="before-after">
+            <div class="before-after-img">
+              <img src="brand_assets/baldinglikebaldwin.png" alt="Before" width="400" height="533" loading="lazy" decoding="async" />
+              <span class="before-after-label">Before</span>
+            </div>
+            <div class="before-after-img">
+              <img src="brand_assets/nobaldy.png" alt="2 Months" width="400" height="533" loading="lazy" decoding="async" />
+              <span class="before-after-label">2 Months</span>
+            </div>
+          </div>
+          <div class="testimonial-content">
+            <div class="testimonial-stars">
+              <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
+            </div>
+            <p class="testimonial-quote">"I used to spend twenty minutes every morning rearranging my hair to hide the bald spot. Two months in, I stopped doing that. I just brush it and go."</p>
+            <p class="testimonial-author">Linda, 49 · Perimenopause</p>
+            <div class="testimonial-tags">
+              <span class="testimonial-tag">Bald spot covered</span>
+              <span class="testimonial-tag">New baby hairs</span>
+              <span class="testimonial-tag">Mornings got easier</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 5 -->
+        <div class="testimonial-slide">
+          <div class="before-after">
+            <div class="before-after-img">
+              <img src="brand_assets/baldinglikebaldwin2.png" alt="Before" width="400" height="533" loading="lazy" decoding="async" />
+              <span class="before-after-label">Before</span>
+            </div>
+            <div class="before-after-img">
+              <img src="brand_assets/nobaldy2.png" alt="5 Months" width="400" height="533" loading="lazy" decoding="async" />
+              <span class="before-after-label">5 Months</span>
+            </div>
+          </div>
+          <div class="testimonial-content">
+            <div class="testimonial-stars">
+              <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
+            </div>
+            <p class="testimonial-quote">"My hairdresser noticed before I did. She asked what I was using on my scalp because my regrowth was filling in spots she hadn't seen hair in years."</p>
+            <p class="testimonial-author">Patricia, 58 · Post-menopause</p>
+            <div class="testimonial-tags">
+              <span class="testimonial-tag">Hairdresser noticed</span>
+              <span class="testimonial-tag">Regrowth at temples</span>
+              <span class="testimonial-tag">Five months in</span>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div style="display:flex; align-items:center; justify-content:space-between; margin-top:48px;">
@@ -958,6 +1010,8 @@
           <div class="slider-dot active" data-slide="0"></div>
           <div class="slider-dot" data-slide="1"></div>
           <div class="slider-dot" data-slide="2"></div>
+          <div class="slider-dot" data-slide="3"></div>
+          <div class="slider-dot" data-slide="4"></div>
         </div>
       </div>
     </div>
@@ -1253,7 +1307,7 @@
   const track = document.getElementById('testimonialTrack');
   const dots = document.querySelectorAll('.slider-dot');
   let current = 0;
-  const total = 3;
+  const total = 5;
 
   function goToSlide(n) {
     current = (n + total) % total;
