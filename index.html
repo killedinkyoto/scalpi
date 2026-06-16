@@ -999,6 +999,32 @@
             </div>
           </div>
         </div>
+
+        <!-- Slide 6 -->
+        <div class="testimonial-slide">
+          <div class="before-after">
+            <div class="before-after-img">
+              <img src="brand_assets/baldinglikebaldwin3.jpg" alt="Before" width="400" height="533" loading="lazy" decoding="async" />
+              <span class="before-after-label">Before</span>
+            </div>
+            <div class="before-after-img">
+              <img src="brand_assets/nobaldy3.jpg" alt="4 Months" width="400" height="533" loading="lazy" decoding="async" />
+              <span class="before-after-label">4 Months</span>
+            </div>
+          </div>
+          <div class="testimonial-content">
+            <div class="testimonial-stars">
+              <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
+            </div>
+            <p class="testimonial-quote">"I'd stopped taking photos of myself from above. Now my husband takes them to show me how much has filled in — that's how I know it's actually working."</p>
+            <p class="testimonial-author">Susan, 51 · Perimenopause</p>
+            <div class="testimonial-tags">
+              <span class="testimonial-tag">Crown coverage</span>
+              <span class="testimonial-tag">Thicker part line</span>
+              <span class="testimonial-tag">Four months in</span>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div style="display:flex; align-items:center; justify-content:space-between; margin-top:48px;">
@@ -1012,6 +1038,7 @@
           <div class="slider-dot" data-slide="2"></div>
           <div class="slider-dot" data-slide="3"></div>
           <div class="slider-dot" data-slide="4"></div>
+          <div class="slider-dot" data-slide="5"></div>
         </div>
       </div>
     </div>
@@ -1307,7 +1334,7 @@
   const track = document.getElementById('testimonialTrack');
   const dots = document.querySelectorAll('.slider-dot');
   let current = 0;
-  const total = 5;
+  const total = 6;
 
   function goToSlide(n) {
     current = (n + total) % total;
