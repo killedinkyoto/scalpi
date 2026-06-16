@@ -141,8 +141,9 @@
     .ingredient-icon { width: 40px; height: 40px; border: 1px solid #1C3A2A20; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
     .ingredient-name { font-family: 'EB Garamond', serif; font-size: 19px; color: #1C3A2A; font-weight: 500; }
     .ingredient-aka { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #B87A3D; font-weight: 500; margin-top: 4px; }
-    .ingredient-accordion-icon { width: 26px; height: 26px; border: 1px solid #1C3A2A30; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 14px; color: #1C3A2A; transition: transform 0.3s; }
-    .ingredient-accordion-item.open .ingredient-accordion-icon { transform: rotate(45deg); }
+    .ingredient-accordion-icon { width: 26px; height: 26px; border: 1px solid #1C3A2A30; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 14px; color: #1C3A2A; }
+    .ingredient-accordion-icon span { display: inline-block; transition: transform 0.3s; }
+    .ingredient-accordion-item.open .ingredient-accordion-icon span { transform: rotate(45deg); }
     .ingredient-accordion-body { display: none; padding-bottom: 28px; }
     .ingredient-accordion-item.open .ingredient-accordion-body { display: flex; gap: 28px; }
     .ingredient-media { width: 160px; height: 130px; background: #1C3A2A0D; flex-shrink: 0; display: flex; align-items: center; justify-content: center; border: 1px solid #1C3A2A15; }
@@ -160,7 +161,7 @@
     .testimonial-track { display: flex; gap: 0; overflow: hidden; }
     .testimonial-slide { min-width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
     .before-after { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
-    .before-after-img { position: relative; overflow: hidden; aspect-ratio: 3/4; background: #1C3A2A20; }
+    .before-after-img { position: relative; overflow: hidden; aspect-ratio: 3/4; background: #1C3A2A20; border: 1px solid #1C3A2A20; }
     .before-after-img img { width: 100%; height: 100%; object-fit: cover; }
     .before-after-label { position: absolute; bottom: 12px; left: 12px; background: #1C3A2A; color: #F5F0E6; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; padding: 5px 10px; font-weight: 500; }
     .testimonial-content { padding-top: 16px; }
@@ -216,9 +217,10 @@
     .faq-item { border-bottom: 1px solid #1C3A2A15; }
     .faq-q { display: flex; justify-content: space-between; align-items: center; padding: 24px 0; cursor: pointer; gap: 24px; }
     .faq-q-text { font-family: 'EB Garamond', serif; font-size: 20px; color: #1C3A2A; font-weight: 500; line-height: 1.3; }
-    .faq-icon { width: 24px; height: 24px; border: 1px solid #1C3A2A30; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 14px; color: #1C3A2A; transition: transform 0.3s; }
+    .faq-icon { width: 24px; height: 24px; border: 1px solid #1C3A2A30; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 14px; color: #1C3A2A; }
+    .faq-icon span { display: inline-block; transition: transform 0.3s; }
     .faq-a { font-size: 14px; line-height: 1.8; color: #3D6B52; padding-bottom: 24px; display: none; max-width: 760px; }
-    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    .faq-item.open .faq-icon span { transform: rotate(45deg); }
     .faq-item.open .faq-a { display: block; }
 
     /* ── FOOTER ── */
@@ -442,7 +444,7 @@
     <div class="problem-carousel-wrap">
       <div class="problem-carousel-track">
         <div class="problem-card">
-          <div class="problem-card-media"><img src="https://placehold.co/340x150/1C3A2A0D/3D6B52?text=Diagram" alt="" style="width:100%;height:100%;object-fit:cover;"/></div>
+          <div class="problem-card-media"><img src="https://placehold.co/340x150/1C3A2A0D/3D6B52?text=Trapped+Barrier" alt="" style="width:100%;height:100%;object-fit:cover;"/></div>
           <div class="problem-card-body-wrap">
             <div class="problem-card-label">The Trapped Barrier</div>
             <div class="problem-card-title">The Plastic Wrap Over Your Scalp</div>
@@ -450,7 +452,7 @@
           </div>
         </div>
         <div class="problem-card">
-          <div class="problem-card-media"><img src="https://placehold.co/340x150/1C3A2A0D/3D6B52?text=Diagram" alt="" style="width:100%;height:100%;object-fit:cover;"/></div>
+          <div class="problem-card-media"><img src="https://placehold.co/340x150/1C3A2A0D/3D6B52?text=Premature+Aging" alt="" style="width:100%;height:100%;object-fit:cover;"/></div>
           <div class="problem-card-body-wrap">
             <div class="problem-card-label">Premature Aging</div>
             <div class="problem-card-title">Your Follicles Are Aging Too Fast</div>
@@ -458,7 +460,7 @@
           </div>
         </div>
         <div class="problem-card">
-          <div class="problem-card-media"><img src="https://placehold.co/340x150/1C3A2A0D/3D6B52?text=Diagram" alt="" style="width:100%;height:100%;object-fit:cover;"/></div>
+          <div class="problem-card-media"><img src="https://placehold.co/340x150/1C3A2A0D/3D6B52?text=DKK-1+Signal" alt="" style="width:100%;height:100%;object-fit:cover;"/></div>
           <div class="problem-card-body-wrap">
             <div class="problem-card-label">The Stop Signal</div>
             <div class="problem-card-title">The Protein Shutting Down Your Growth</div>
@@ -466,7 +468,7 @@
           </div>
         </div>
         <div class="problem-card">
-          <div class="problem-card-media"><img src="https://placehold.co/340x150/1C3A2A0D/3D6B52?text=Diagram" alt="" style="width:100%;height:100%;object-fit:cover;"/></div>
+          <div class="problem-card-media"><img src="https://placehold.co/340x150/1C3A2A0D/3D6B52?text=Surface+Only" alt="" style="width:100%;height:100%;object-fit:cover;"/></div>
           <div class="problem-card-body-wrap">
             <div class="problem-card-label">The Penetration Problem</div>
             <div class="problem-card-title">Why Nothing Has Worked</div>
@@ -475,7 +477,7 @@
         </div>
         <!-- duplicate set for seamless loop -->
         <div class="problem-card">
-          <div class="problem-card-media"><img src="https://placehold.co/340x150/1C3A2A0D/3D6B52?text=Diagram" alt="" style="width:100%;height:100%;object-fit:cover;"/></div>
+          <div class="problem-card-media"><img src="https://placehold.co/340x150/1C3A2A0D/3D6B52?text=Trapped+Barrier" alt="" style="width:100%;height:100%;object-fit:cover;"/></div>
           <div class="problem-card-body-wrap">
             <div class="problem-card-label">The Trapped Barrier</div>
             <div class="problem-card-title">The Plastic Wrap Over Your Scalp</div>
@@ -483,7 +485,7 @@
           </div>
         </div>
         <div class="problem-card">
-          <div class="problem-card-media"><img src="https://placehold.co/340x150/1C3A2A0D/3D6B52?text=Diagram" alt="" style="width:100%;height:100%;object-fit:cover;"/></div>
+          <div class="problem-card-media"><img src="https://placehold.co/340x150/1C3A2A0D/3D6B52?text=Premature+Aging" alt="" style="width:100%;height:100%;object-fit:cover;"/></div>
           <div class="problem-card-body-wrap">
             <div class="problem-card-label">Premature Aging</div>
             <div class="problem-card-title">Your Follicles Are Aging Too Fast</div>
@@ -491,7 +493,7 @@
           </div>
         </div>
         <div class="problem-card">
-          <div class="problem-card-media"><img src="https://placehold.co/340x150/1C3A2A0D/3D6B52?text=Diagram" alt="" style="width:100%;height:100%;object-fit:cover;"/></div>
+          <div class="problem-card-media"><img src="https://placehold.co/340x150/1C3A2A0D/3D6B52?text=DKK-1+Signal" alt="" style="width:100%;height:100%;object-fit:cover;"/></div>
           <div class="problem-card-body-wrap">
             <div class="problem-card-label">The Stop Signal</div>
             <div class="problem-card-title">The Protein Shutting Down Your Growth</div>
@@ -499,7 +501,7 @@
           </div>
         </div>
         <div class="problem-card">
-          <div class="problem-card-media"><img src="https://placehold.co/340x150/1C3A2A0D/3D6B52?text=Diagram" alt="" style="width:100%;height:100%;object-fit:cover;"/></div>
+          <div class="problem-card-media"><img src="https://placehold.co/340x150/1C3A2A0D/3D6B52?text=Surface+Only" alt="" style="width:100%;height:100%;object-fit:cover;"/></div>
           <div class="problem-card-body-wrap">
             <div class="problem-card-label">The Penetration Problem</div>
             <div class="problem-card-title">Why Nothing Has Worked</div>
@@ -623,7 +625,7 @@
               <div class="ingredient-aka">Vitamin B3</div>
             </div>
           </div>
-          <div class="ingredient-accordion-icon">+</div>
+          <div class="ingredient-accordion-icon"><span>+</span></div>
         </div>
         <div class="ingredient-accordion-body">
           <div class="ingredient-media"><img src="https://placehold.co/160x130/1C3A2A0D/3D6B52?text=Niacinamide" alt="" style="width:100%;height:100%;object-fit:cover;"/></div>
@@ -642,7 +644,7 @@
               <div class="ingredient-aka">Vitamin A</div>
             </div>
           </div>
-          <div class="ingredient-accordion-icon">+</div>
+          <div class="ingredient-accordion-icon"><span>+</span></div>
         </div>
         <div class="ingredient-accordion-body">
           <div class="ingredient-media"><img src="https://placehold.co/160x130/1C3A2A0D/3D6B52?text=Retinol" alt="" style="width:100%;height:100%;object-fit:cover;"/></div>
@@ -661,7 +663,7 @@
               <div class="ingredient-aka">Green Tea Extract</div>
             </div>
           </div>
-          <div class="ingredient-accordion-icon">+</div>
+          <div class="ingredient-accordion-icon"><span>+</span></div>
         </div>
         <div class="ingredient-accordion-body">
           <div class="ingredient-media"><img src="https://placehold.co/160x130/1C3A2A0D/3D6B52?text=EGCG" alt="" style="width:100%;height:100%;object-fit:cover;"/></div>
@@ -680,7 +682,7 @@
               <div class="ingredient-aka">Root Extract</div>
             </div>
           </div>
-          <div class="ingredient-accordion-icon">+</div>
+          <div class="ingredient-accordion-icon"><span>+</span></div>
         </div>
         <div class="ingredient-accordion-body">
           <div class="ingredient-media"><img src="https://placehold.co/160x130/1C3A2A0D/3D6B52?text=Ginseng" alt="" style="width:100%;height:100%;object-fit:cover;"/></div>
@@ -699,7 +701,7 @@
               <div class="ingredient-aka">Vitamin E</div>
             </div>
           </div>
-          <div class="ingredient-accordion-icon">+</div>
+          <div class="ingredient-accordion-icon"><span>+</span></div>
         </div>
         <div class="ingredient-accordion-body">
           <div class="ingredient-media"><img src="https://placehold.co/160x130/1C3A2A0D/3D6B52?text=Vitamin+E" alt="" style="width:100%;height:100%;object-fit:cover;"/></div>
@@ -718,7 +720,7 @@
               <div class="ingredient-aka">Vitamin C</div>
             </div>
           </div>
-          <div class="ingredient-accordion-icon">+</div>
+          <div class="ingredient-accordion-icon"><span>+</span></div>
         </div>
         <div class="ingredient-accordion-body">
           <div class="ingredient-media"><img src="https://placehold.co/160x130/1C3A2A0D/3D6B52?text=Vitamin+C" alt="" style="width:100%;height:100%;object-fit:cover;"/></div>
@@ -730,14 +732,14 @@
         <div class="ingredient-accordion-header">
           <div class="ingredient-accordion-left">
             <div class="ingredient-icon">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 3c0 0-5 3-5 8s5 7 5 7 5-2 5-7-5-8-5-8z" stroke="#1C3A2A" stroke-width="1" fill="none"/></svg>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="5.8" r="2.1" stroke="#1C3A2A" stroke-width="1"/><circle cx="10" cy="14.2" r="2.1" stroke="#1C3A2A" stroke-width="1"/><circle cx="5.8" cy="10" r="2.1" stroke="#1C3A2A" stroke-width="1"/><circle cx="14.2" cy="10" r="2.1" stroke="#1C3A2A" stroke-width="1"/><circle cx="10" cy="10" r="1.8" fill="#B87A3D"/></svg>
             </div>
             <div>
               <div class="ingredient-name">Calendula</div>
               <div class="ingredient-aka">Flower Extract</div>
             </div>
           </div>
-          <div class="ingredient-accordion-icon">+</div>
+          <div class="ingredient-accordion-icon"><span>+</span></div>
         </div>
         <div class="ingredient-accordion-body">
           <div class="ingredient-media"><img src="https://placehold.co/160x130/1C3A2A0D/3D6B52?text=Calendula" alt="" style="width:100%;height:100%;object-fit:cover;"/></div>
@@ -821,7 +823,7 @@
         <div class="testimonial-slide">
           <div class="before-after">
             <div class="before-after-img">
-              <img src="https://placehold.co/400x533/EDE6D6/3D6B52?text=Before" alt="Before" />
+              <img src="https://placehold.co/400x533/C9BFA3/5C5547?text=Before" alt="Before" />
               <span class="before-after-label">Before</span>
             </div>
             <div class="before-after-img">
@@ -847,7 +849,7 @@
         <div class="testimonial-slide">
           <div class="before-after">
             <div class="before-after-img">
-              <img src="https://placehold.co/400x533/EDE6D6/3D6B52?text=Before" alt="Before" />
+              <img src="https://placehold.co/400x533/C9BFA3/5C5547?text=Before" alt="Before" />
               <span class="before-after-label">Before</span>
             </div>
             <div class="before-after-img">
@@ -873,7 +875,7 @@
         <div class="testimonial-slide">
           <div class="before-after">
             <div class="before-after-img">
-              <img src="https://placehold.co/400x533/EDE6D6/3D6B52?text=Before" alt="Before" />
+              <img src="https://placehold.co/400x533/C9BFA3/5C5547?text=Before" alt="Before" />
               <span class="before-after-label">Before</span>
             </div>
             <div class="before-after-img">
@@ -1053,7 +1055,7 @@
     <div class="faq-item">
       <div class="faq-q">
         <span class="faq-q-text">How is Scalpi different from rosemary oil or other topical hair serums?</span>
-        <div class="faq-icon">+</div>
+        <div class="faq-icon"><span>+</span></div>
       </div>
       <div class="faq-a">Regular serums and oils cannot get past your skin's outer layer. Studies show only 0.3% of what is in those products reaches the layer where your follicles actually live. Scalpi uses tiny capsules that blend into your skin, travel down the follicle, and release their ingredients right at the root, reaching about 70% of follicle depth. No regular topical can do that.</div>
     </div>
@@ -1061,7 +1063,7 @@
     <div class="faq-item">
       <div class="faq-q">
         <span class="faq-q-text">Will it make my hair greasy or require changes to my styling routine?</span>
-        <div class="faq-icon">+</div>
+        <div class="faq-icon"><span>+</span></div>
       </div>
       <div class="faq-a">No. Unlike castor, jojoba, or coconut oil, which sit on top of your hair and weigh it down, Scalpi fully absorbs into your scalp in under 60 seconds. It does not travel up the hair shaft, so there is no residue, no weight, and no greasy look. You can style your hair like normal the next morning.</div>
     </div>
@@ -1069,7 +1071,7 @@
     <div class="faq-item">
       <div class="faq-q">
         <span class="faq-q-text">I've tried Nutrafol and Viviscal. Why would this be different?</span>
-        <div class="faq-icon">+</div>
+        <div class="faq-icon"><span>+</span></div>
       </div>
       <div class="faq-a">Hair supplements have to pass through your liver before reaching your scalp at all. Whatever survives that trip then travels through your bloodstream and competes with every other organ in your body. Only a tiny fraction ever makes it to your scalp, and none of it specifically targets your follicles. Scalpi skips your stomach and liver completely. It delivers ingredients straight to the follicle root, with 2.7 times better absorption than regular creams.</div>
     </div>
@@ -1077,7 +1079,7 @@
     <div class="faq-item">
       <div class="faq-q">
         <span class="faq-q-text">How long before I see results?</span>
-        <div class="faq-icon">+</div>
+        <div class="faq-icon"><span>+</span></div>
       </div>
       <div class="faq-a">Hair grows in cycles, so results take a bit of patience no matter what you use. Most people notice less shedding within 2 to 4 weeks. Visible thickness usually shows up between months 3 and 6, once follicles complete a full growth cycle. That is why the 6-bottle option covers the full 6-month course.</div>
     </div>
@@ -1085,7 +1087,7 @@
     <div class="faq-item">
       <div class="faq-q">
         <span class="faq-q-text">Is there a risk of a "dread shed" like I experienced with rosemary oil?</span>
-        <div class="faq-icon">+</div>
+        <div class="faq-icon"><span>+</span></div>
       </div>
       <div class="faq-a">No. The dread shed from heavy oils happens because the oily film blocks your pores and feeds scalp yeast, which causes irritation and shedding. Scalpi works differently. It does not sit on your skin or block your follicles. It is built to undo that suffocating effect, not cause it.</div>
     </div>
@@ -1093,7 +1095,7 @@
     <div class="faq-item">
       <div class="faq-q">
         <span class="faq-q-text">Is this safe if I have thyroid concerns or shellfish allergies?</span>
-        <div class="faq-icon">+</div>
+        <div class="faq-icon"><span>+</span></div>
       </div>
       <div class="faq-a">Yes. Scalpi has zero kelp, iodine, shark cartilage, or oyster powder, the ingredients that cause thyroid issues and shellfish allergy reactions in supplements like Viviscal. It is applied to your scalp and does not enter your bloodstream, so there is no organ stress to worry about.</div>
     </div>
