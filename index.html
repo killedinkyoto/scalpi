@@ -26,8 +26,8 @@
   </script>
   <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=REPLACE_WITH_META_PIXEL_ID&ev=PageView&noscript=1" /></noscript>
 
-  <!-- ── KLAVIYO ── replace REPLACE_WITH_KLAVIYO_PUBLIC_KEY with your Company ID (Account > Settings > API Keys) -->
-  <script type="text/javascript" async src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=REPLACE_WITH_KLAVIYO_PUBLIC_KEY"></script>
+  <!-- ── KLAVIYO ── -->
+  <script type="text/javascript" async src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=S3D76Q"></script>
 
   <!-- ── MICROSOFT CLARITY ── replace REPLACE_WITH_CLARITY_PROJECT_ID with your Project ID from clarity.microsoft.com -->
   <script type="text/javascript">
@@ -1379,8 +1379,8 @@
 
   // ── EMAIL CAPTURE ──
   const DISCOUNT_CODE = 'SCALPI10';
-  const KLAVIYO_PUBLIC_KEY = 'REPLACE_WITH_KLAVIYO_PUBLIC_KEY';
-  const KLAVIYO_LIST_ID = 'REPLACE_WITH_KLAVIYO_LIST_ID';
+  const KLAVIYO_PUBLIC_KEY = 'S3D76Q';
+  const KLAVIYO_LIST_ID = 'XtcHw7';
   const isValidEmail = email => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
   function subscribeToKlaviyo(email) {
@@ -1398,13 +1398,30 @@
     }).catch(() => {});
   }
 
+  function trackDiscountIssued(email) {
+    if (KLAVIYO_PUBLIC_KEY.startsWith('REPLACE_WITH')) return;
+    if (typeof klaviyo === 'undefined') return;
+    klaviyo.identify({ email });
+    klaviyo.track('Discount Code Issued', { code: DISCOUNT_CODE });
+  }
+
   function recordLead(email) {
     subscribeToKlaviyo(email);
+    trackDiscountIssued(email);
     if (typeof fbq === 'function') fbq('track', 'Lead');
+  }
+
+  function applyDiscountToCheckoutLinks() {
+    document.querySelectorAll('.checkout-link').forEach(link => {
+      const url = new URL(link.href);
+      url.searchParams.set('discount', DISCOUNT_CODE);
+      link.href = url.toString();
+    });
   }
 
   function markSubscribed() {
     localStorage.setItem('scalpiEmailSubscribed', '1');
+    applyDiscountToCheckoutLinks();
   }
   function hasSubscribed() {
     return localStorage.getItem('scalpiEmailSubscribed') === '1';
@@ -1413,6 +1430,8 @@
     const dismissedAt = +localStorage.getItem('scalpiEmailDismissedAt');
     return dismissedAt && (Date.now() - dismissedAt) < 7 * 24 * 60 * 60 * 1000;
   }
+
+  if (hasSubscribed()) applyDiscountToCheckoutLinks();
 
   // Modal
   const emailModalOverlay = document.getElementById('emailModalOverlay');
