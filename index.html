@@ -253,6 +253,63 @@
     .email-modal-shop-btn { display: block; width: 100%; text-align: center; background: #1C3A2A; color: #F5F0E6; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; padding: 15px; text-decoration: none; }
     .email-modal-shop-btn:hover { background: #2D5240; }
 
+    /* ── NAV CART ── */
+    .nav-right { display: flex; align-items: center; gap: 18px; }
+    .nav-cart { position: relative; background: transparent; border: none; cursor: pointer; padding: 6px; display: flex; align-items: center; color: #1C3A2A; line-height: 0; transition: color 0.2s ease; }
+    .nav-cart svg { width: 22px; height: 22px; display: block; }
+    .nav-cart:hover { color: #B87A3D; }
+    .nav-cart:active { transform: scale(0.94); }
+    .nav-cart:focus-visible { outline: 2px solid #B87A3D; outline-offset: 3px; }
+    .nav-cart-count { position: absolute; top: -3px; right: -5px; min-width: 16px; height: 16px; padding: 0 4px; background: #B87A3D; color: #F5F0E6; font-size: 10px; font-weight: 500; border-radius: 999px; display: flex; align-items: center; justify-content: center; line-height: 1; }
+    .nav-cart-count[hidden] { display: none; }
+
+    /* ── CART DRAWER ── */
+    .cart-overlay { position: fixed; inset: 0; background: #1A1A18CC; z-index: 210; opacity: 0; visibility: hidden; transition: opacity 0.35s ease; }
+    .cart-overlay.active { opacity: 1; visibility: visible; }
+    .cart-drawer { position: fixed; top: 0; right: 0; height: 100%; width: 420px; max-width: 100%; background: #F5F0E6; box-shadow: -24px 0 60px -20px #1C3A2A55; display: flex; flex-direction: column; transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1); }
+    .cart-overlay.active .cart-drawer { transform: translateX(0); }
+    .cart-head { display: flex; align-items: center; justify-content: space-between; padding: 24px 28px; border-bottom: 1px solid #1C3A2A18; flex-shrink: 0; }
+    .cart-head-title { font-family: 'EB Garamond', serif; font-size: 22px; font-weight: 500; color: #1C3A2A; letter-spacing: -0.01em; }
+    .cart-close { width: 30px; height: 30px; border: 1px solid #1C3A2A30; background: transparent; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 16px; color: #1C3A2A; transition: background 0.2s ease, color 0.2s ease; }
+    .cart-close:hover { background: #1C3A2A; color: #F5F0E6; }
+    .cart-body { flex: 1; overflow-y: auto; padding: 24px 28px; }
+    .cart-foot { border-top: 1px solid #1C3A2A18; padding: 22px 28px 28px; flex-shrink: 0; }
+
+    .cart-empty { text-align: center; padding: 40px 0; }
+    .cart-empty-text { font-size: 14px; color: #3D6B52; line-height: 1.6; margin-bottom: 22px; }
+
+    .cart-item { display: flex; gap: 16px; align-items: flex-start; }
+    .cart-item-media { position: relative; width: 76px; height: 76px; flex-shrink: 0; overflow: hidden; background: #1C3A2A0D; display: flex; align-items: center; justify-content: center; }
+    .cart-item-media-icon { width: 28px; height: 28px; color: #B87A3D; opacity: 0.55; }
+    .cart-item-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .cart-item-info { flex: 1; min-width: 0; }
+    .cart-item-name { font-family: 'EB Garamond', serif; font-size: 18px; font-weight: 500; color: #1C3A2A; line-height: 1.2; }
+    .cart-item-sub { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #B87A3D; font-weight: 500; margin-top: 4px; }
+    .cart-item-price { font-family: 'EB Garamond', serif; font-size: 18px; color: #1C3A2A; font-weight: 500; }
+    .cart-item-row { display: flex; align-items: center; justify-content: space-between; margin-top: 12px; }
+    .cart-qty { display: flex; align-items: center; border: 1px solid #1C3A2A30; }
+    .cart-qty button { width: 28px; height: 28px; background: transparent; border: none; cursor: pointer; color: #1C3A2A; font-size: 15px; display: flex; align-items: center; justify-content: center; transition: background 0.15s ease, color 0.15s ease; }
+    .cart-qty button:hover { background: #1C3A2A; color: #F5F0E6; }
+    .cart-qty span { min-width: 30px; text-align: center; font-size: 13px; color: #1A1A18; }
+    .cart-remove { font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: #6B8F79; background: none; border: none; cursor: pointer; text-decoration: underline; padding: 0; }
+    .cart-remove:hover { color: #C4714A; }
+
+    .cart-unlock { margin-top: 26px; border: 1px dashed #B87A3D80; background: #B87A3D12; padding: 16px; }
+    .cart-unlock-title { font-size: 13px; color: #1C3A2A; font-weight: 500; margin-bottom: 4px; }
+    .cart-unlock-sub { font-size: 12px; color: #3D6B52; line-height: 1.5; margin-bottom: 12px; }
+    .cart-unlock-btn { width: 100%; background: #B87A3D; color: #F5F0E6; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; padding: 11px; border: none; cursor: pointer; transition: opacity 0.2s ease; }
+    .cart-unlock-btn:hover { opacity: 0.92; }
+
+    .cart-line { display: flex; align-items: center; justify-content: space-between; font-size: 13px; color: #3D6B52; margin-bottom: 10px; }
+    .cart-line.discount { color: #B87A3D; font-weight: 500; }
+    .cart-line-total { display: flex; align-items: baseline; justify-content: space-between; padding-top: 14px; margin-top: 4px; border-top: 1px solid #1C3A2A18; }
+    .cart-line-total .lbl { font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: #1C3A2A; font-weight: 500; }
+    .cart-line-total .val { font-family: 'EB Garamond', serif; font-size: 28px; color: #1C3A2A; font-weight: 500; }
+    .cart-checkout { display: block; width: 100%; text-align: center; background: #B87A3D; color: #F5F0E6; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; padding: 16px; border: none; cursor: pointer; text-decoration: none; margin-top: 18px; transition: opacity 0.2s ease; }
+    .cart-checkout:hover { opacity: 0.92; }
+    .cart-checkout:active { transform: translateY(1px); }
+    .cart-foot-note { font-size: 11px; color: #6B8F79; text-align: center; margin-top: 12px; }
+
     /* ── FOOTER EMAIL CAPTURE ── */
     .footer-email { background: #22281F; border: 1px solid #F5F0E615; padding: 36px 40px; margin-bottom: 40px; display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
     .footer-email-copy { max-width: 380px; }
@@ -409,7 +466,13 @@
       <a href="#results">Results</a>
       <a href="#faq">FAQ</a>
     </div>
-    <a href="#purchase" class="nav-cta" style="display:inline-block;text-decoration:none;">Begin the Ritual →</a>
+    <div class="nav-right">
+      <button class="nav-cart" id="navCart" aria-label="Open cart" aria-haspopup="dialog">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+        <span class="nav-cart-count" id="navCartCount" hidden>0</span>
+      </button>
+      <a href="#purchase" class="nav-cta" style="display:inline-block;text-decoration:none;">Begin the Ritual →</a>
+    </div>
   </div>
 </nav>
 
@@ -1130,7 +1193,7 @@
             <div class="purchase-feature">Free shipping</div>
             <div class="purchase-feature">60-day money-back guarantee</div>
           </div>
-          <a href="https://uq958w-vz.myshopify.com/cart/53224180580463:1" class="btn-purchase checkout-link" data-value="79" data-bundle="1 Bottle" style="display:block;text-align:center;text-decoration:none;">Get 1 Bottle · $79</a>
+          <a href="https://uq958w-vz.myshopify.com/cart/53224180580463:1" class="btn-purchase checkout-link" data-sku="1" data-value="79" data-bundle="1 Bottle" style="display:block;text-align:center;text-decoration:none;">Get 1 Bottle · $79</a>
         </div>
       </div>
       <div class="purchase-card featured">
@@ -1146,7 +1209,7 @@
             <div class="purchase-feature">60-day money-back guarantee</div>
             <div class="purchase-feature">The full 90-day course (Months 1–3)</div>
           </div>
-          <a href="https://uq958w-vz.myshopify.com/cart/53224322859119:1" class="btn-purchase checkout-link" data-value="199" data-bundle="3 Bottles" style="display:block;text-align:center;text-decoration:none;">Get 3 Bottles · $199</a>
+          <a href="https://uq958w-vz.myshopify.com/cart/53224322859119:1" class="btn-purchase checkout-link" data-sku="3" data-value="199" data-bundle="3 Bottles" style="display:block;text-align:center;text-decoration:none;">Get 3 Bottles · $199</a>
         </div>
       </div>
       <div class="purchase-card">
@@ -1162,7 +1225,7 @@
             <div class="purchase-feature">The full 6-month restoration (Months 1–6)</div>
             <div class="purchase-feature">Priority access to future formulations</div>
           </div>
-          <a href="https://uq958w-vz.myshopify.com/cart/53224338129007:1" class="btn-purchase checkout-link" data-value="349" data-bundle="6 Bottles" style="display:block;text-align:center;text-decoration:none;">Get 6 Bottles · $349</a>
+          <a href="https://uq958w-vz.myshopify.com/cart/53224338129007:1" class="btn-purchase checkout-link" data-sku="6" data-value="349" data-bundle="6 Bottles" style="display:block;text-align:center;text-decoration:none;">Get 6 Bottles · $349</a>
         </div>
       </div>
     </div>
@@ -1297,6 +1360,20 @@
 </div>
 
 <!-- ══════════════════════════════════════
+     CART DRAWER
+══════════════════════════════════════ -->
+<div class="cart-overlay" id="cartOverlay">
+  <aside class="cart-drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-label="Your cart">
+    <div class="cart-head">
+      <div class="cart-head-title">Your Cart</div>
+      <button class="cart-close" id="cartClose" aria-label="Close cart">×</button>
+    </div>
+    <div class="cart-body" id="cartBody"></div>
+    <div class="cart-foot" id="cartFoot"></div>
+  </aside>
+</div>
+
+<!-- ══════════════════════════════════════
      JAVASCRIPT
 ══════════════════════════════════════ -->
 <script>
@@ -1361,21 +1438,141 @@
     });
   });
 
-  // ── CHECKOUT LINK TRACKING ──
+  // ══════════════════════════════════════
+  //  STORE CONFIG + CART DRAWER
+  // ══════════════════════════════════════
+  // Checkout / cart host. After you add checkout.tryscalpi.com in Shopify Admin →
+  // Settings → Domains AND create the matching CNAME record in DNS, change this
+  // single line to 'checkout.tryscalpi.com' — nothing else needs to move.
+  const CHECKOUT_HOST = 'uq958w-vz.myshopify.com';
+  const DISCOUNT_CODE = 'SCALPI10';
+  const DISCOUNT_RATE = 0.10;
+
+  const PRODUCTS = {
+    '1': { id: '53224180580463', name: '1 Bottle',  sub: '30 Day Supply',  price: 79,  img: 'brand_assets/hf_20260616_103051_ece7c918-38d6-4aee-9148-537f282eff40.png' },
+    '3': { id: '53224322859119', name: '3 Bottles', sub: '90 Day Supply',  price: 199, img: 'brand_assets/hf_20260616_103059_c60b7cb0-281a-4afa-9e7e-240b3e0c1478.png' },
+    '6': { id: '53224338129007', name: '6 Bottles', sub: '180 Day Supply', price: 349, img: 'brand_assets/hf_20260616_103105_bd1fc150-4bc3-4b76-b257-d30db524a96d.png' },
+  };
+
+  let cart = { sku: null, qty: 1 };
+
+  const money = n => '$' + n.toLocaleString('en-US', { minimumFractionDigits: Number.isInteger(n) ? 0 : 2, maximumFractionDigits: 2 });
+
+  const cartOverlay  = document.getElementById('cartOverlay');
+  const cartClose    = document.getElementById('cartClose');
+  const cartBody     = document.getElementById('cartBody');
+  const cartFoot     = document.getElementById('cartFoot');
+  const navCart      = document.getElementById('navCart');
+  const navCartCount = document.getElementById('navCartCount');
+
+  function updateCartBadge() {
+    const n = cart.sku ? cart.qty : 0;
+    navCartCount.textContent = n;
+    navCartCount.hidden = n === 0;
+  }
+
+  function buildCheckoutUrl() {
+    const v = PRODUCTS[cart.sku];
+    let url = `https://${CHECKOUT_HOST}/cart/${v.id}:${cart.qty}`;
+    if (hasSubscribed()) url += `?discount=${DISCOUNT_CODE}`;
+    return url;
+  }
+
+  function openCart() {
+    if (emailModalOverlay.classList.contains('active')) closeEmailModal();
+    cartOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeCart() { cartOverlay.classList.remove('active'); document.body.style.overflow = ''; }
+
+  function renderCart() {
+    updateCartBadge();
+
+    if (!cart.sku) {
+      cartBody.innerHTML = `
+        <div class="cart-empty">
+          <p class="cart-empty-text">Your cart is empty.<br/>Choose your supply below to begin.</p>
+          <button class="cart-checkout" id="cartShopBtn" style="margin-top:0;">Choose Your Bundle</button>
+        </div>`;
+      cartFoot.innerHTML = '';
+      document.getElementById('cartShopBtn').addEventListener('click', () => {
+        closeCart();
+        document.getElementById('purchase').scrollIntoView({ behavior: 'smooth' });
+      });
+      return;
+    }
+
+    const p = PRODUCTS[cart.sku];
+    const subtotal = p.price * cart.qty;
+    const subscribed = hasSubscribed();
+    const discount = subscribed ? subtotal * DISCOUNT_RATE : 0;
+    const total = subtotal - discount;
+
+    cartBody.innerHTML = `
+      <div class="cart-item">
+        <div class="cart-item-media">
+          <svg class="cart-item-media-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3h4v2.5l1.2 2A3 3 0 0 1 16 9.2V19a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2V9.2a3 3 0 0 1 .8-1.7L10 5.5V3z"/><path d="M8.5 12h7"/></svg>
+          <img src="${p.img}" alt="${p.name}" onerror="this.remove()"/>
+        </div>
+        <div class="cart-item-info">
+          <div class="cart-item-name">${p.name}</div>
+          <div class="cart-item-sub">${p.sub}</div>
+          <div class="cart-item-row">
+            <div class="cart-qty">
+              <button type="button" id="qtyMinus" aria-label="Decrease quantity">−</button>
+              <span>${cart.qty}</span>
+              <button type="button" id="qtyPlus" aria-label="Increase quantity">+</button>
+            </div>
+            <div class="cart-item-price">${money(subtotal)}</div>
+          </div>
+          <button class="cart-remove" id="cartRemove" style="margin-top:14px;">Remove</button>
+        </div>
+      </div>
+      ${subscribed ? '' : `
+      <div class="cart-unlock">
+        <div class="cart-unlock-title">Unlock 10% off this order</div>
+        <div class="cart-unlock-sub">Add your email and ${DISCOUNT_CODE} applies automatically — before you pay.</div>
+        <button class="cart-unlock-btn" id="cartUnlockBtn">Get My 10% Off</button>
+      </div>`}`;
+
+    cartFoot.innerHTML = `
+      <div class="cart-line"><span>Subtotal</span><span>${money(subtotal)}</span></div>
+      ${subscribed ? `<div class="cart-line discount"><span>${DISCOUNT_CODE} (−10%)</span><span>−${money(discount)}</span></div>` : ''}
+      <div class="cart-line-total"><span class="lbl">Total</span><span class="val">${money(total)}</span></div>
+      <a class="cart-checkout" id="cartCheckout" href="${buildCheckoutUrl()}">Secure Checkout →</a>
+      <p class="cart-foot-note">${subscribed ? '✦ ' + DISCOUNT_CODE + ' discount applied' : 'Free shipping · 60-day money-back guarantee'}</p>`;
+
+    document.getElementById('qtyMinus').addEventListener('click', () => { cart.qty = Math.max(1, cart.qty - 1); renderCart(); });
+    document.getElementById('qtyPlus').addEventListener('click', () => { cart.qty = Math.min(10, cart.qty + 1); renderCart(); });
+    document.getElementById('cartRemove').addEventListener('click', () => { cart = { sku: null, qty: 1 }; renderCart(); });
+    const unlock = document.getElementById('cartUnlockBtn');
+    if (unlock) unlock.addEventListener('click', () => { closeCart(); openEmailModal(); });
+    document.getElementById('cartCheckout').addEventListener('click', () => {
+      if (typeof fbq === 'function') fbq('track', 'InitiateCheckout', { value: total, currency: 'USD', content_name: p.name });
+    });
+  }
+
+  function addToCart(sku) {
+    if (cart.sku === sku) cart.qty = Math.min(10, cart.qty + 1);
+    else cart = { sku, qty: 1 };
+    renderCart();
+    openCart();
+  }
+
+  // Bundle buttons open OUR cart drawer instead of jumping to the Shopify storefront
   document.querySelectorAll('.checkout-link').forEach(link => {
-    link.addEventListener('click', () => {
-      if (typeof fbq === 'function') {
-        fbq('track', 'InitiateCheckout', {
-          value: +link.dataset.value,
-          currency: 'USD',
-          content_name: link.dataset.bundle,
-        });
-      }
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      addToCart(link.dataset.sku);
     });
   });
 
+  navCart.addEventListener('click', openCart);
+  cartClose.addEventListener('click', closeCart);
+  cartOverlay.addEventListener('click', e => { if (e.target === cartOverlay) closeCart(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && cartOverlay.classList.contains('active')) closeCart(); });
+
   // ── EMAIL CAPTURE ──
-  const DISCOUNT_CODE = 'SCALPI10';
   const KLAVIYO_PUBLIC_KEY = 'S3D76Q';
   const KLAVIYO_LIST_ID = 'XtcHw7';
   const isValidEmail = email => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -1408,17 +1605,9 @@
     if (typeof fbq === 'function') fbq('track', 'Lead');
   }
 
-  function applyDiscountToCheckoutLinks() {
-    document.querySelectorAll('.checkout-link').forEach(link => {
-      const url = new URL(link.href);
-      url.searchParams.set('discount', DISCOUNT_CODE);
-      link.href = url.toString();
-    });
-  }
-
   function markSubscribed() {
     localStorage.setItem('scalpiEmailSubscribed', '1');
-    applyDiscountToCheckoutLinks();
+    renderCart();
   }
   function hasSubscribed() {
     return localStorage.getItem('scalpiEmailSubscribed') === '1';
@@ -1428,7 +1617,7 @@
     return dismissedAt && (Date.now() - dismissedAt) < 7 * 24 * 60 * 60 * 1000;
   }
 
-  if (hasSubscribed()) applyDiscountToCheckoutLinks();
+  renderCart();
 
   // Modal
   const emailModalOverlay = document.getElementById('emailModalOverlay');
@@ -1452,6 +1641,7 @@
     let shown = false;
     window.addEventListener('scroll', () => {
       if (shown) return;
+      if (cartOverlay.classList.contains('active')) return;
       if (window.scrollY > 150) {
         shown = true;
         openEmailModal();
@@ -1460,7 +1650,11 @@
   }
 
   emailModalClose.addEventListener('click', closeEmailModal);
-  emailModalShopBtn.addEventListener('click', closeEmailModal);
+  emailModalShopBtn.addEventListener('click', e => {
+    closeEmailModal();
+    // If they have an item waiting, drop them back into the cart so they see the 10% off applied
+    if (cart.sku) { e.preventDefault(); openCart(); }
+  });
   emailModalOverlay.addEventListener('click', e => { if (e.target === emailModalOverlay) closeEmailModal(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && emailModalOverlay.classList.contains('active')) closeEmailModal(); });
 
