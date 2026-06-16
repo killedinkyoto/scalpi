@@ -49,7 +49,7 @@
     .nav-logo { font-family: 'EB Garamond', serif; font-size: 22px; font-weight: 500; color: #1C3A2A; letter-spacing: -0.02em; }
     .nav-links { display: flex; gap: 36px; }
     .nav-links a { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #3D6B52; text-decoration: none; font-weight: 500; }
-    .nav-cta { background: #1C3A2A; color: #F5F0E6; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; padding: 11px 28px; border: none; cursor: pointer; }
+    .nav-cta { display: inline-block; text-decoration: none; background: #1C3A2A; color: #F5F0E6; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; padding: 11px 28px; border: none; cursor: pointer; }
     .nav-cta:hover { background: #2D5240; }
 
     /* ── HERO ── */
@@ -187,6 +187,7 @@
     .slider-dot.active { background: #B87A3D; }
 
     /* ── VS TABLE ── */
+    .vs-scroll-hint { display: none; }
     .vs-table { width: 100%; border-collapse: collapse; margin-top: 64px; }
     .vs-table th { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; padding: 16px 24px; text-align: left; border-bottom: 2px solid #1C3A2A; }
     .vs-table th:first-child { color: #3D6B52; }
@@ -262,6 +263,22 @@
     .nav-cart:focus-visible { outline: 2px solid #B87A3D; outline-offset: 3px; }
     .nav-cart-count { position: absolute; top: -3px; right: -5px; min-width: 16px; height: 16px; padding: 0 4px; background: #B87A3D; color: #F5F0E6; font-size: 10px; font-weight: 500; border-radius: 999px; display: flex; align-items: center; justify-content: center; line-height: 1; }
     .nav-cart-count[hidden] { display: none; }
+
+    /* ── MOBILE NAV (hamburger + menu) ── */
+    .nav-burger { display: none; width: 44px; height: 44px; background: transparent; border: none; cursor: pointer; flex-direction: column; align-items: center; justify-content: center; gap: 5px; padding: 0; }
+    .nav-burger span { display: block; width: 22px; height: 2px; background: #1C3A2A; transition: transform 0.3s cubic-bezier(0.22,1,0.36,1), opacity 0.2s ease; }
+    .nav-burger:focus-visible { outline: 2px solid #B87A3D; outline-offset: 2px; }
+    body.menu-open .nav-burger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    body.menu-open .nav-burger span:nth-child(2) { opacity: 0; }
+    body.menu-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-menu { position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 90; background: #1C3A2A; padding: 96px 28px 40px; display: flex; flex-direction: column; gap: 4px; transform: translateY(-100%); opacity: 0; visibility: hidden; transition: transform 0.4s cubic-bezier(0.22,1,0.36,1), opacity 0.3s ease, visibility 0.3s; }
+    .mobile-menu.active { transform: translateY(0); opacity: 1; visibility: visible; }
+    .mobile-menu-links { display: flex; flex-direction: column; }
+    .mobile-menu-links a { font-family: 'EB Garamond', serif; font-size: 30px; font-weight: 500; color: #F5F0E6; text-decoration: none; padding: 16px 0; border-bottom: 1px solid #F5F0E615; letter-spacing: -0.01em; transition: color 0.2s ease; }
+    .mobile-menu-links a:hover, .mobile-menu-links a:active { color: #B87A3D; }
+    .mobile-menu-cta { margin-top: 28px; display: block; text-align: center; background: #B87A3D; color: #F5F0E6; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; padding: 18px; text-decoration: none; transition: opacity 0.2s ease; }
+    .mobile-menu-cta:active { opacity: 0.9; }
 
     /* ── CART DRAWER ── */
     .cart-overlay { position: fixed; inset: 0; background: #1A1A18CC; z-index: 210; opacity: 0; visibility: hidden; transition: opacity 0.35s ease; }
@@ -340,6 +357,7 @@
     ══════════════════════════════════════ */
     @media (max-width: 1024px) {
       .nav-links { display: none; }
+      .nav-burger { display: flex; }
       .nav-inner { padding: 0 32px; }
       .hero-left { padding: 60px 40px 60px 40px; }
       .section { padding: 96px 40px; }
@@ -362,7 +380,10 @@
     @media (max-width: 768px) {
       /* Nav */
       .nav-inner { padding: 0 20px; height: 60px; }
-      .nav-cta { padding: 9px 16px; font-size: 11px; }
+      .nav-cta { display: none; }
+      .nav-right { gap: 6px; }
+      .nav-cart { width: 44px; height: 44px; padding: 0; justify-content: center; }
+      .nav-cart-count { top: 4px; right: 4px; }
 
       /* Hero */
       .hero { grid-template-columns: 1fr; min-height: auto; padding-top: 60px; }
@@ -403,6 +424,7 @@
       /* Ingredients */
       .ingredient-accordion { margin-top: 40px; }
       .ingredient-name { font-size: 17px; }
+      .ingredient-media { height: 96px; }
 
       /* Testimonials */
       .testimonials-inner { padding: 64px 20px; }
@@ -412,10 +434,11 @@
       .slider-controls { margin-top: 32px; }
 
       /* VS table — horizontal scroll */
-      .vs-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 40px; }
+      .vs-scroll-hint { display: block; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #B87A3D; font-weight: 500; margin-top: 32px; }
+      .vs-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 14px; }
       .vs-table-wrap::-webkit-scrollbar { height: 3px; }
       .vs-table-wrap::-webkit-scrollbar-thumb { background: #1C3A2A30; }
-      .vs-table { margin-top: 0; min-width: 640px; }
+      .vs-table { margin-top: 0; min-width: 560px; }
 
       /* Purchase */
       .purchase-inner { padding: 64px 20px; }
@@ -430,7 +453,8 @@
       /* Footer */
       footer { padding: 48px 20px 32px; }
       .footer-top { flex-direction: column; gap: 24px; padding-bottom: 32px; margin-bottom: 28px; }
-      .footer-links { flex-wrap: wrap; gap: 16px; }
+      .footer-links { flex-wrap: wrap; gap: 8px 20px; }
+      .footer-links a { padding: 8px 0; }
       .footer-bottom { flex-direction: column; gap: 12px; align-items: flex-start; }
       .footer-disclaimer { text-align: left; max-width: 100%; }
 
@@ -439,6 +463,8 @@
       .email-modal-title { font-size: 26px; }
       .footer-email { flex-direction: column; align-items: stretch; padding: 28px 24px; margin-bottom: 28px; }
       .footer-email-form { flex-direction: column; max-width: 100%; }
+      .footer-email-submit { padding: 16px 22px; }
+      .footer-email-input { padding: 15px 16px; }
     }
 
     /* ══════════════════════════════════════
@@ -471,10 +497,26 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
         <span class="nav-cart-count" id="navCartCount" hidden>0</span>
       </button>
-      <a href="#purchase" class="nav-cta" style="display:inline-block;text-decoration:none;">Begin the Ritual →</a>
+      <a href="#purchase" class="nav-cta">Begin the Ritual →</a>
+      <button class="nav-burger" id="navBurger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </div>
 </nav>
+
+<!-- ══════════════════════════════════════
+     MOBILE MENU
+══════════════════════════════════════ -->
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <div class="mobile-menu-links">
+    <a href="#how-it-works">How It Works</a>
+    <a href="#ingredients">Ingredients</a>
+    <a href="#results">Results</a>
+    <a href="#faq">FAQ</a>
+  </div>
+  <a href="#purchase" class="mobile-menu-cta">Begin the Ritual →</a>
+</div>
 
 <!-- ══════════════════════════════════════
      HERO
@@ -1114,6 +1156,7 @@
   <div class="section">
     <div class="section-label">07 · The Comparison</div>
     <h2 class="section-h2">Scalpi vs.<br/><em>everything you've tried.</em></h2>
+    <p class="vs-scroll-hint">Swipe to compare all three →</p>
     <div class="vs-table-wrap">
     <table class="vs-table">
       <thead>
@@ -1480,6 +1523,7 @@
 
   function openCart() {
     if (emailModalOverlay.classList.contains('active')) closeEmailModal();
+    if (document.body.classList.contains('menu-open')) closeMenu();
     cartOverlay.classList.add('active');
     document.body.style.overflow = 'hidden';
   }
@@ -1568,6 +1612,30 @@
   });
 
   navCart.addEventListener('click', openCart);
+
+  // ── MOBILE MENU ──
+  const navBurger = document.getElementById('navBurger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  function openMenu() {
+    mobileMenu.classList.add('active');
+    document.body.classList.add('menu-open');
+    document.body.style.overflow = 'hidden';
+    navBurger.setAttribute('aria-expanded', 'true');
+    mobileMenu.setAttribute('aria-hidden', 'false');
+    navBurger.setAttribute('aria-label', 'Close menu');
+  }
+  function closeMenu() {
+    mobileMenu.classList.remove('active');
+    document.body.classList.remove('menu-open');
+    document.body.style.overflow = '';
+    navBurger.setAttribute('aria-expanded', 'false');
+    mobileMenu.setAttribute('aria-hidden', 'true');
+    navBurger.setAttribute('aria-label', 'Open menu');
+  }
+  navBurger.addEventListener('click', () => mobileMenu.classList.contains('active') ? closeMenu() : openMenu());
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && mobileMenu.classList.contains('active')) closeMenu(); });
+
   cartClose.addEventListener('click', closeCart);
   cartOverlay.addEventListener('click', e => { if (e.target === cartOverlay) closeCart(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && cartOverlay.classList.contains('active')) closeCart(); });
