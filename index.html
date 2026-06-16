@@ -1438,6 +1438,7 @@
   const emailModalError = document.getElementById('emailModalError');
   const emailModalForm = document.getElementById('emailModalForm');
   const emailModalSuccess = document.getElementById('emailModalSuccess');
+  const emailModalShopBtn = document.getElementById('emailModalShopBtn');
 
   function openEmailModal() {
     emailModalOverlay.classList.add('active');
@@ -1459,6 +1460,7 @@
   }
 
   emailModalClose.addEventListener('click', closeEmailModal);
+  emailModalShopBtn.addEventListener('click', closeEmailModal);
   emailModalOverlay.addEventListener('click', e => { if (e.target === emailModalOverlay) closeEmailModal(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && emailModalOverlay.classList.contains('active')) closeEmailModal(); });
 
