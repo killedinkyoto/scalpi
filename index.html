@@ -41,10 +41,10 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body { background: #F5F0E6; color: #1A1A18; font-family: 'DM Sans', system-ui, sans-serif; font-weight: 300; overflow-x: hidden; }
+    body { background: #F5F0E6; color: #1A1A18; font-family: 'DM Sans', system-ui, sans-serif; font-weight: 300; overflow-x: hidden; overflow-x: clip; }
 
     /* ── NAV ── */
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: #F5F0E6; border-bottom: 1px solid #1C3A2A18; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: #F5F0E6; border-bottom: 1px solid #1C3A2A18; transform: translateZ(0); -webkit-backface-visibility: hidden; backface-visibility: hidden; }
     .nav-inner { max-width: 1280px; margin: 0 auto; padding: 0 48px; height: 68px; display: flex; align-items: center; justify-content: space-between; }
     .nav-logo { font-family: 'EB Garamond', serif; font-size: 22px; font-weight: 500; color: #1C3A2A; letter-spacing: -0.02em; }
     .nav-links { display: flex; gap: 36px; }
