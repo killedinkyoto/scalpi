@@ -419,8 +419,10 @@
 
       /* Hero */
       .hero { grid-template-columns: 1fr; min-height: auto; padding-top: 60px; }
-      .hero-left { padding: 48px 20px 56px; }
-      .hero-right { display: none; }
+      .hero-left { padding: 48px 20px 44px; }
+      .hero-right { display: block; height: 360px; }
+      .hero-right img { opacity: 1; mix-blend-mode: normal; }
+      .hero-right::after { background: linear-gradient(to bottom, #1C3A2A 0%, transparent 24%); }
       .hero-h1 { font-size: clamp(36px, 9vw, 52px); margin-bottom: 20px; }
       .hero-sub { font-size: 14px; margin-bottom: 32px; }
       .hero-stats { margin-bottom: 32px; }
