@@ -41,10 +41,10 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body { background: #F5F0E6; color: #1A1A18; font-family: 'DM Sans', system-ui, sans-serif; font-weight: 300; overflow-x: hidden; }
+    body { background: #F5F0E6; color: #1A1A18; font-family: 'DM Sans', system-ui, sans-serif; font-weight: 300; overflow-x: hidden; overflow-x: clip; }
 
     /* ── NAV ── */
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: #F5F0E6; border-bottom: 1px solid #1C3A2A18; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: #F5F0E6; border-bottom: 1px solid #1C3A2A18; transform: translateZ(0); -webkit-backface-visibility: hidden; backface-visibility: hidden; }
     .nav-inner { max-width: 1280px; margin: 0 auto; padding: 0 48px; height: 68px; display: flex; align-items: center; justify-content: space-between; }
     .nav-logo { font-family: 'EB Garamond', serif; font-size: 22px; font-weight: 500; color: #1C3A2A; letter-spacing: -0.02em; }
     .nav-links { display: flex; gap: 36px; }
@@ -223,6 +223,38 @@
     .purchase-trust-item { font-size: 11px; letter-spacing: 0.06em; color: #6B8F79; display: flex; align-items: center; gap: 8px; }
     .purchase-trust-item .ticker-dot { background: #B87A3D; }
 
+    /* rating / social proof */
+    .purchase-rating { display: flex; align-items: center; gap: 12px; margin-top: 22px; flex-wrap: wrap; }
+    .purchase-stars { display: inline-flex; gap: 3px; color: #B87A3D; }
+    .purchase-stars svg { width: 17px; height: 17px; }
+    .purchase-rating-text { font-size: 13px; color: #9DBBAA; letter-spacing: 0.01em; }
+    .purchase-rating-text strong { color: #F5F0E6; font-weight: 600; }
+
+    /* anchor pricing + savings */
+    .purchase-price { margin-bottom: 0; }
+    .purchase-price-row { display: flex; align-items: baseline; gap: 10px; margin-bottom: 8px; }
+    .purchase-was { font-family: 'EB Garamond', serif; font-size: 22px; color: #6B8F79; text-decoration: line-through; text-decoration-color: #6B8F7980; }
+    .purchase-save { display: inline-block; background: #B87A3D; color: #F5F0E6; font-size: 10px; letter-spacing: 0.07em; text-transform: uppercase; font-weight: 600; padding: 4px 10px; margin-bottom: 12px; }
+    .purchase-instock { font-size: 11.5px; color: #9DBBAA; display: flex; align-items: center; gap: 7px; margin-top: 14px; }
+    .purchase-instock::before { content: ''; width: 7px; height: 7px; border-radius: 999px; background: #7FB069; box-shadow: 0 0 0 3px #7FB06933; }
+
+    /* guarantee box */
+    .purchase-guarantee { display: flex; align-items: center; gap: 22px; max-width: 700px; margin: 52px auto 0; background: #F5F0E60A; border: 1px solid #F5F0E61F; padding: 24px 30px; }
+    .purchase-guarantee-seal { width: 64px; height: 64px; flex-shrink: 0; }
+    .purchase-guarantee-title { font-family: 'EB Garamond', serif; font-size: 21px; color: #F5F0E6; font-weight: 500; margin-bottom: 7px; }
+    .purchase-guarantee-text { font-size: 13px; line-height: 1.65; color: #9DBBAA; }
+
+    /* trust badge band */
+    .purchase-badges { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px 30px; margin-top: 36px; }
+    .purchase-badge-item { display: flex; align-items: center; gap: 9px; font-size: 12px; letter-spacing: 0.03em; color: #9DBBAA; }
+    .purchase-badge-item svg { width: 18px; height: 18px; color: #B87A3D; flex-shrink: 0; }
+
+    /* payment marks */
+    .purchase-pay { text-align: center; margin-top: 36px; }
+    .purchase-pay-label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #6B8F79; margin-bottom: 14px; }
+    .purchase-pay-marks { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; }
+    .purchase-pay-mark { background: #F5F0E6; height: 28px; padding: 0 10px; display: flex; align-items: center; font-size: 11px; font-weight: 700; color: #1C3A2A; letter-spacing: 0.02em; border-radius: 4px; }
+
     /* ── FAQ ── */
     .faq-item { border-bottom: 1px solid #1C3A2A15; }
     .faq-q { display: flex; justify-content: space-between; align-items: center; padding: 24px 0; cursor: pointer; gap: 24px; }
@@ -387,8 +419,10 @@
 
       /* Hero */
       .hero { grid-template-columns: 1fr; min-height: auto; padding-top: 60px; }
-      .hero-left { padding: 48px 20px 56px; }
-      .hero-right { display: none; }
+      .hero-left { padding: 48px 20px 44px; }
+      .hero-right { display: block; height: 360px; }
+      .hero-right img { opacity: 1; mix-blend-mode: normal; }
+      .hero-right::after { background: linear-gradient(to bottom, #1C3A2A 0%, transparent 24%); }
       .hero-h1 { font-size: clamp(36px, 9vw, 52px); margin-bottom: 20px; }
       .hero-sub { font-size: 14px; margin-bottom: 32px; }
       .hero-stats { margin-bottom: 32px; }
@@ -446,6 +480,8 @@
       .purchase-card.featured { order: -1; }
       .purchase-body { padding: 0 24px; }
       .purchase-trust { gap: 18px; justify-content: flex-start; }
+      .purchase-guarantee { flex-direction: column; text-align: center; gap: 16px; padding: 28px 22px; }
+      .purchase-badges { gap: 14px 22px; }
 
       /* FAQ */
       .faq-q-text { font-size: 17px; }
@@ -1226,20 +1262,31 @@
   <div class="purchase-inner">
     <div class="section-label">08 · Begin the Ritual</div>
     <h2 class="section-h2">Your follicles have been<br/>waiting long enough.<br/><em>Start tonight.</em></h2>
+    <div class="purchase-rating">
+      <span class="purchase-stars" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 16.9 6.6 19.5l1-6.1L3.2 9l6.1-.9z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 16.9 6.6 19.5l1-6.1L3.2 9l6.1-.9z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 16.9 6.6 19.5l1-6.1L3.2 9l6.1-.9z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 16.9 6.6 19.5l1-6.1L3.2 9l6.1-.9z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 16.9 6.6 19.5l1-6.1L3.2 9l6.1-.9z"/></svg>
+      </span>
+      <span class="purchase-rating-text"><strong>4.8</strong>/5 · Loved by <strong>2,000+</strong> women over 45</span>
+    </div>
     <p class="purchase-intro">Every order ships free and is backed by a 60-day money-back guarantee. If your scalp does not feel different, you do not pay.</p>
     <div class="purchase-grid">
       <div class="purchase-card">
         <div class="purchase-media"><img src="brand_assets/hf_20260616_102218_118d3e1f-c0ba-4c3b-8114-ca456f8a0225.png" alt="1 Bottle" width="360" height="180" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;"/></div>
         <div class="purchase-body">
           <div class="purchase-bottles">1 Bottle — 30 Day Supply</div>
-          <div class="purchase-price">$79</div>
-          <div class="purchase-per">$79 / bottle</div>
+          <div class="purchase-price-row"><span class="purchase-price">$79</span></div>
+          <div class="purchase-per">$79 / bottle · Try it out</div>
           <div class="purchase-features">
             <div class="purchase-feature">30 ml Liposomal Scalp Therapy</div>
             <div class="purchase-feature">Free shipping</div>
             <div class="purchase-feature">60-day money-back guarantee</div>
           </div>
           <a href="https://uq958w-vz.myshopify.com/cart/53224180580463:1" class="btn-purchase checkout-link" data-sku="1" data-value="79" data-bundle="1 Bottle" style="display:block;text-align:center;text-decoration:none;">Get 1 Bottle · $79</a>
+          <div class="purchase-instock">In stock — ships within 24 hours</div>
         </div>
       </div>
       <div class="purchase-card featured">
@@ -1247,8 +1294,9 @@
         <div class="purchase-media"><img src="brand_assets/hf_20260616_102306_9f2b7b68-cf14-4aa9-be7e-3b15a3f01618.png" alt="3 Bottles" width="360" height="180" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;"/></div>
         <div class="purchase-body">
           <div class="purchase-bottles">3 Bottles — 90 Day Supply</div>
-          <div class="purchase-price">$199</div>
-          <div class="purchase-per" style="color:#B87A3D;">$66 / bottle · Save $38</div>
+          <div class="purchase-price-row"><span class="purchase-price">$199</span><span class="purchase-was">$237</span></div>
+          <span class="purchase-save">Save $38 · 16% off</span>
+          <div class="purchase-per">$66 / bottle</div>
           <div class="purchase-features">
             <div class="purchase-feature">3 × 30 ml Liposomal Scalp Therapy</div>
             <div class="purchase-feature">Free priority shipping</div>
@@ -1256,14 +1304,17 @@
             <div class="purchase-feature">The full 90-day course (Months 1–3)</div>
           </div>
           <a href="https://uq958w-vz.myshopify.com/cart/53224322859119:1" class="btn-purchase checkout-link" data-sku="3" data-value="199" data-bundle="3 Bottles" style="display:block;text-align:center;text-decoration:none;">Get 3 Bottles · $199</a>
+          <div class="purchase-instock">In stock — ships within 24 hours</div>
         </div>
       </div>
       <div class="purchase-card">
+        <div class="purchase-badge">Best Value</div>
         <div class="purchase-media"><img src="brand_assets/hf_20260616_102321_5ffd229f-a686-4758-a009-eea438f61c7e.png" alt="6 Bottles" width="360" height="180" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;"/></div>
         <div class="purchase-body">
           <div class="purchase-bottles">6 Bottles — 180 Day Supply</div>
-          <div class="purchase-price">$349</div>
-          <div class="purchase-per">$58 / bottle · Save $125</div>
+          <div class="purchase-price-row"><span class="purchase-price">$349</span><span class="purchase-was">$474</span></div>
+          <span class="purchase-save">Save $125 · 26% off</span>
+          <div class="purchase-per">$58 / bottle</div>
           <div class="purchase-features">
             <div class="purchase-feature">6 × 30 ml Liposomal Scalp Therapy</div>
             <div class="purchase-feature">Free priority shipping</div>
@@ -1272,14 +1323,43 @@
             <div class="purchase-feature">Priority access to future formulations</div>
           </div>
           <a href="https://uq958w-vz.myshopify.com/cart/53224338129007:1" class="btn-purchase checkout-link" data-sku="6" data-value="349" data-bundle="6 Bottles" style="display:block;text-align:center;text-decoration:none;">Get 6 Bottles · $349</a>
+          <div class="purchase-instock">In stock — ships within 24 hours</div>
         </div>
       </div>
     </div>
-    <div class="purchase-trust">
-      <div class="purchase-trust-item"><span class="ticker-dot"></span>Secure checkout</div>
-      <div class="purchase-trust-item"><span class="ticker-dot"></span>One-time purchase</div>
-      <div class="purchase-trust-item"><span class="ticker-dot"></span>No subscription</div>
-      <div class="purchase-trust-item"><span class="ticker-dot"></span>60-day money-back guarantee</div>
+    <div class="purchase-guarantee">
+      <svg class="purchase-guarantee-seal" viewBox="0 0 80 80" fill="none" aria-hidden="true">
+        <circle cx="40" cy="40" r="37" stroke="#B87A3D" stroke-width="2"/>
+        <circle cx="40" cy="40" r="31" stroke="#B87A3D" stroke-width="1" stroke-dasharray="2 3" opacity="0.7"/>
+        <text x="40" y="37" text-anchor="middle" font-family="'EB Garamond', serif" font-size="23" font-weight="600" fill="#B87A3D">60</text>
+        <text x="40" y="51" text-anchor="middle" font-family="'DM Sans', sans-serif" font-size="8" letter-spacing="1.5" fill="#B87A3D">DAYS</text>
+      </svg>
+      <div>
+        <div class="purchase-guarantee-title">60-Day Money-Back Guarantee</div>
+        <div class="purchase-guarantee-text">Use Scalpi every night for a full 60 days. If you don't see baby hairs or feel a real difference in your scalp, email us for a 100% refund — you don't even need to send the bottle back.</div>
+      </div>
+    </div>
+
+    <div class="purchase-badges">
+      <div class="purchase-badge-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg>60-Day Guarantee</div>
+      <div class="purchase-badge-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6.5h11v8H3z"/><path d="M14 9h4l3 3v2.5h-7z"/><circle cx="7" cy="18" r="1.7"/><circle cx="17.5" cy="18" r="1.7"/></svg>Free Shipping</div>
+      <div class="purchase-badge-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>Ships in 24 Hours</div>
+      <div class="purchase-badge-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 3h5"/><path d="M10 3v6l-4.5 8.5A1.2 1.2 0 0 0 6.6 19.5h10.8a1.2 1.2 0 0 0 1.1-2L14 9V3"/><path d="M8 14.5h8"/></svg>Third-Party Tested</div>
+      <div class="purchase-badge-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3.5v17"/><path d="M5 4.5h13l-2.2 4 2.2 4H5"/></svg>Made in the USA</div>
+      <div class="purchase-badge-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="1"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Secure Checkout</div>
+    </div>
+
+    <div class="purchase-pay">
+      <div class="purchase-pay-label">Guaranteed safe &amp; secure checkout</div>
+      <div class="purchase-pay-marks">
+        <span class="purchase-pay-mark">VISA</span>
+        <span class="purchase-pay-mark">Mastercard</span>
+        <span class="purchase-pay-mark">Amex</span>
+        <span class="purchase-pay-mark">PayPal</span>
+        <span class="purchase-pay-mark">Shop Pay</span>
+        <span class="purchase-pay-mark">Apple Pay</span>
+        <span class="purchase-pay-mark">G Pay</span>
+      </div>
     </div>
   </div>
 </div>
