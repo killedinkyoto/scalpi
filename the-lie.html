@@ -110,9 +110,30 @@
     .adv-ph span { font-family: 'DM Sans', sans-serif; font-size: 12px; letter-spacing: 0.04em; color: #3D6B52; max-width: 84%; line-height: 1.6; }
 
     /* ugc grid */
-    .adv-ugc { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
-    .adv-ugc-item { aspect-ratio: 1; background: #1C3A2A0D; border: 1px dashed #1C3A2A33; display: flex; align-items: center; justify-content: center; padding: 10px; }
-    .adv-ugc-item span { font-family: 'DM Sans', sans-serif; font-size: 10px; letter-spacing: 0.04em; text-transform: uppercase; color: #6B8F79; text-align: center; line-height: 1.4; }
+    .adv-ugc { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .adv-ugc-item { aspect-ratio: 1; overflow: hidden; border-radius: 4px; position: relative; cursor: pointer; box-shadow: 0 4px 16px -6px #1C3A2A44; }
+    .adv-ugc-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+    .adv-ugc-item::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, #1C3A2A99 0%, transparent 55%); opacity: 0; transition: opacity 0.25s ease; }
+    .adv-ugc-item:hover img { transform: scale(1.04); }
+    .adv-ugc-item:hover::after { opacity: 1; }
+    .adv-ugc-item-hint { position: absolute; bottom: 10px; left: 0; right: 0; text-align: center; font-family: 'DM Sans', sans-serif; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #F5F0E6; font-weight: 600; opacity: 0; transition: opacity 0.25s ease; z-index: 2; }
+    .adv-ugc-item:hover .adv-ugc-item-hint { opacity: 1; }
+
+    /* ugc modal */
+    .ugc-modal-overlay { display: none; position: fixed; inset: 0; background: #0C1F14CC; backdrop-filter: blur(4px); z-index: 1000; align-items: center; justify-content: center; padding: 20px; }
+    .ugc-modal-overlay.is-open { display: flex; }
+    .ugc-modal { background: #F5F0E6; max-width: 620px; width: 100%; border-radius: 4px; overflow: hidden; position: relative; box-shadow: 0 40px 80px -20px #0C1F1466; animation: ugcModalIn 0.28s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+    @keyframes ugcModalIn { from { opacity: 0; transform: translateY(16px) scale(0.97); } to { opacity: 1; transform: none; } }
+    .ugc-modal-img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; }
+    .ugc-modal-body { padding: 28px 32px 32px; }
+    .ugc-modal-stars { color: #B87A3D; font-size: 15px; letter-spacing: 0.08em; margin-bottom: 14px; }
+    .ugc-modal-quote { font-family: 'EB Garamond', serif; font-size: 20px; line-height: 1.55; color: #2C2C26; font-style: italic; }
+    .ugc-modal-quote::before { content: '\201C'; color: #B87A3D; }
+    .ugc-modal-quote::after { content: '\201D'; color: #B87A3D; }
+    .ugc-modal-name { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600; color: #1C3A2A; margin-top: 18px; letter-spacing: 0.02em; }
+    .ugc-modal-meta { font-family: 'DM Sans', sans-serif; font-size: 12px; color: #7A7A70; margin-top: 3px; }
+    .ugc-modal-close { position: absolute; top: 14px; right: 14px; width: 36px; height: 36px; border-radius: 50%; background: #1C3A2ACC; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; color: #F5F0E6; font-size: 18px; line-height: 1; transition: background 0.15s; }
+    .ugc-modal-close:hover { background: #1C3A2A; }
 
     /* diagrams */
     .adv-diagram2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
@@ -297,7 +318,7 @@
   <h2>I Dismissed It — Until My Sister Called Me Crying</h2>
 
   <figure class="adv-fig">
-    <img src="brand_assets/hf_20260616_102336_e306362f-9725-4fac-8025-bfaf44c8e8ca.png" alt="Woman with fuller hair holding a Scalpi bottle" loading="lazy" />
+    <img src="brand_assets/scalpi-baby-hairs-temple.png" alt="Woman with fuller hair holding a Scalpi bottle" loading="lazy" />
     <figcaption>Baby hairs along the temple and hairline — the first sign the follicle is feeding again.</figcaption>
   </figure>
 
@@ -312,7 +333,7 @@
   <h2>This Is The Part Nobody Believes</h2>
 
   <figure class="adv-fig">
-    <img src="brand_assets/hf_20260616_102257_e0782a02-f64d-4543-99f0-41362b56daaa.png" alt="Woman applying Scalpi dropper to her scalp in the evening" loading="lazy" />
+    <img src="brand_assets/scalpi-evening-dropper-ritual.png" alt="Woman applying Scalpi dropper to her scalp in the evening" loading="lazy" />
     <figcaption>One dropper, massaged into the scalp at night. Sixty seconds. That's the whole ritual.</figcaption>
   </figure>
 
@@ -388,17 +409,44 @@
   <p>They tried it anyway. Here's what they're sending me.</p>
   <figure>
     <div class="adv-ugc">
-      <div class="adv-ugc-item"><img src="brand_assets/ugc-01-brunette-bathroom.png" alt="Customer with Scalpi bottle" loading="lazy" style="width:100%;height:100%;object-fit:cover;" /></div>
-      <div class="adv-ugc-item"><img src="brand_assets/ugc-02-silver-bedroom.png" alt="Customer with Scalpi bottle" loading="lazy" style="width:100%;height:100%;object-fit:cover;" /></div>
-      <div class="adv-ugc-item"><img src="brand_assets/ugc-03-auburn-kitchen.png" alt="Customer with Scalpi bottle" loading="lazy" style="width:100%;height:100%;object-fit:cover;" /></div>
-      <div class="adv-ugc-item"><img src="brand_assets/ugc-04-saltpepper-vanity.png" alt="Customer with Scalpi bottle" loading="lazy" style="width:100%;height:100%;object-fit:cover;" /></div>
-      <div class="adv-ugc-item"><img src="brand_assets/ugc-05-blonde-sofa.png" alt="Customer with Scalpi bottle" loading="lazy" style="width:100%;height:100%;object-fit:cover;" /></div>
-      <div class="adv-ugc-item"><img src="brand_assets/ugc-06-latina-bathroom.png" alt="Customer with Scalpi bottle" loading="lazy" style="width:100%;height:100%;object-fit:cover;" /></div>
-      <div class="adv-ugc-item"><img src="brand_assets/ugc-04-saltpepper-vanity.png" alt="Customer with Scalpi bottle" loading="lazy" style="width:100%;height:100%;object-fit:cover;" /></div>
-      <div class="adv-ugc-item"><img src="brand_assets/ugc-03-auburn-kitchen.png" alt="Customer with Scalpi bottle" loading="lazy" style="width:100%;height:100%;object-fit:cover;" /></div>
-      <div class="adv-ugc-item"><img src="brand_assets/ugc-01-brunette-bathroom.png" alt="Customer with Scalpi bottle" loading="lazy" style="width:100%;height:100%;object-fit:cover;" /></div>
+      <div class="adv-ugc-item" data-name="Rachel M., 47" data-meta="Portland, OR · Week 4" data-quote="I counted 83 hairs on my bathroom floor after one wash. Three weeks into Scalpi, I had to count twice because I thought I was imagining it. My drain is basically clean now." data-img="brand_assets/ugc-01-brunette-bathroom.png">
+        <img src="brand_assets/ugc-01-brunette-bathroom.png" alt="Rachel M. holding her Scalpi bottle" loading="lazy" />
+        <span class="adv-ugc-item-hint">Read her story</span>
+      </div>
+      <div class="adv-ugc-item" data-name="Carol T., 61" data-meta="Phoenix, AZ · Month 2" data-quote="My doctor said the thinning was just menopause and to accept it. I wasn't ready to accept it. Six weeks later my ponytail is visibly thicker and I actually enjoy looking in the mirror again." data-img="brand_assets/ugc-02-silver-bedroom.png">
+        <img src="brand_assets/ugc-02-silver-bedroom.png" alt="Carol T. holding her Scalpi bottle" loading="lazy" />
+        <span class="adv-ugc-item-hint">Read her story</span>
+      </div>
+      <div class="adv-ugc-item" data-name="Sienna K., 44" data-meta="Nashville, TN · Week 6" data-quote="I was spending $90 a month on Viviscal and seeing nothing. Switched to Scalpi and within a month my husband noticed before I said a word. That's when I knew it was real." data-img="brand_assets/ugc-03-auburn-kitchen.png">
+        <img src="brand_assets/ugc-03-auburn-kitchen.png" alt="Sienna K. holding her Scalpi bottle" loading="lazy" />
+        <span class="adv-ugc-item-hint">Read her story</span>
+      </div>
+      <div class="adv-ugc-item" data-name="Diane W., 55" data-meta="Denver, CO · Month 3" data-quote="My part has been getting wider for four years. I'd stopped wearing my hair down entirely. Five weeks on Scalpi and I wore it down to dinner last Saturday for the first time since 2020." data-img="brand_assets/ugc-04-saltpepper-vanity.png">
+        <img src="brand_assets/ugc-04-saltpepper-vanity.png" alt="Diane W. holding her Scalpi bottle" loading="lazy" />
+        <span class="adv-ugc-item-hint">Read her story</span>
+      </div>
+      <div class="adv-ugc-item" data-name="Tara B., 39" data-meta="Austin, TX · Week 5" data-quote="Everyone told me I was too young to be losing this much hair. The shedding was terrifying. Week two, the clumps got smaller. Week four, they were basically gone. I cried in the shower — happy tears." data-img="brand_assets/ugc-05-blonde-sofa.png">
+        <img src="brand_assets/ugc-05-blonde-sofa.png" alt="Tara B. holding her Scalpi bottle" loading="lazy" />
+        <span class="adv-ugc-item-hint">Read her story</span>
+      </div>
+      <div class="adv-ugc-item" data-name="Isabella R., 52" data-meta="Miami, FL · Month 2" data-quote="Three rounds of biotin, two of rosemary oil, a round of Nutrafol. Nothing. Scalpi is the first thing that did something I could actually see and feel. My scalp doesn't itch anymore and I have baby hairs at my temples." data-img="brand_assets/ugc-06-latina-bathroom.png">
+        <img src="brand_assets/ugc-06-latina-bathroom.png" alt="Isabella R. holding her Scalpi bottle" loading="lazy" />
+        <span class="adv-ugc-item-hint">Read her story</span>
+      </div>
+      <div class="adv-ugc-item" data-name="Diane W., 55" data-meta="Denver, CO · Month 3" data-quote="My part has been getting wider for four years. I'd stopped wearing my hair down entirely. Five weeks on Scalpi and I wore it down to dinner last Saturday for the first time since 2020." data-img="brand_assets/ugc-04-saltpepper-vanity.png">
+        <img src="brand_assets/ugc-04-saltpepper-vanity.png" alt="Diane W. holding her Scalpi bottle" loading="lazy" />
+        <span class="adv-ugc-item-hint">Read her story</span>
+      </div>
+      <div class="adv-ugc-item" data-name="Sienna K., 44" data-meta="Nashville, TN · Week 6" data-quote="I was spending $90 a month on Viviscal and seeing nothing. Switched to Scalpi and within a month my husband noticed before I said a word. That's when I knew it was real." data-img="brand_assets/ugc-03-auburn-kitchen.png">
+        <img src="brand_assets/ugc-03-auburn-kitchen.png" alt="Sienna K. holding her Scalpi bottle" loading="lazy" />
+        <span class="adv-ugc-item-hint">Read her story</span>
+      </div>
+      <div class="adv-ugc-item" data-name="Rachel M., 47" data-meta="Portland, OR · Week 4" data-quote="I counted 83 hairs on my bathroom floor after one wash. Three weeks into Scalpi, I had to count twice because I thought I was imagining it. My drain is basically clean now." data-img="brand_assets/ugc-01-brunette-bathroom.png">
+        <img src="brand_assets/ugc-01-brunette-bathroom.png" alt="Rachel M. holding her Scalpi bottle" loading="lazy" />
+        <span class="adv-ugc-item-hint">Read her story</span>
+      </div>
     </div>
-    <figcaption>Real customers holding their Scalpi bottle — swap in UGC photos here.</figcaption>
+    <figcaption>Real customers — tap any photo to read their story.</figcaption>
   </figure>
 
   <a href="index.html#purchase" class="adv-cta">Check Availability Now →</a>
@@ -554,6 +602,58 @@
       if (typeof fbq === 'function') fbq('track', 'Lead', { content_name: 'Advertorial CTA' });
     });
   });
+</script>
+
+<!-- UGC Modal -->
+<div class="ugc-modal-overlay" id="ugcModalOverlay" role="dialog" aria-modal="true" aria-label="Customer testimonial">
+  <div class="ugc-modal" id="ugcModal">
+    <button class="ugc-modal-close" id="ugcModalClose" aria-label="Close">&#x2715;</button>
+    <img class="ugc-modal-img" id="ugcModalImg" src="" alt="" />
+    <div class="ugc-modal-body">
+      <div class="ugc-modal-stars">★★★★★</div>
+      <p class="ugc-modal-quote" id="ugcModalQuote"></p>
+      <p class="ugc-modal-name" id="ugcModalName"></p>
+      <p class="ugc-modal-meta" id="ugcModalMeta"></p>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function () {
+    var overlay = document.getElementById('ugcModalOverlay');
+    var img = document.getElementById('ugcModalImg');
+    var quote = document.getElementById('ugcModalQuote');
+    var name = document.getElementById('ugcModalName');
+    var meta = document.getElementById('ugcModalMeta');
+
+    function openModal(el) {
+      img.src = el.dataset.img;
+      img.alt = el.querySelector('img').alt;
+      quote.textContent = el.dataset.quote;
+      name.textContent = el.dataset.name;
+      meta.textContent = el.dataset.meta;
+      overlay.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      overlay.classList.remove('is-open');
+      document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('.adv-ugc-item').forEach(function (el) {
+      el.addEventListener('click', function () { openModal(el); });
+      el.setAttribute('role', 'button');
+      el.setAttribute('tabindex', '0');
+      el.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(el); }
+      });
+    });
+
+    document.getElementById('ugcModalClose').addEventListener('click', closeModal);
+    overlay.addEventListener('click', function (e) { if (e.target === overlay) closeModal(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
+  })();
 </script>
 
 </body>
