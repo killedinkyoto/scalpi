@@ -20,11 +20,11 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', 'REPLACE_WITH_META_PIXEL_ID');
+    fbq('init', '972200958988568');
     fbq('track', 'PageView');
     fbq('track', 'ViewContent', { content_name: 'Scalpi Advertorial', content_type: 'article' });
   </script>
-  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=REPLACE_WITH_META_PIXEL_ID&ev=PageView&noscript=1" /></noscript>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=972200958988568&ev=PageView&noscript=1" /></noscript>
 
   <!-- ── KLAVIYO ── -->
   <script type="text/javascript" async src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=S3D76Q"></script>
@@ -168,7 +168,7 @@
     /* offer block */
     .adv-offer { background: #1C3A2A; color: #F5F0E6; padding: 48px 32px 40px; margin: 48px 0; text-align: center; position: relative; overflow: hidden; }
     .adv-offer::after { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 80% -10%, #B87A3D33, transparent 55%); pointer-events: none; }
-    .adv-offer-media { width: 160px; height: 160px; object-fit: cover; margin: 0 auto 24px; display: block; box-shadow: 0 24px 48px -20px #00000099; }
+    .adv-offer-media { width: 150px; height: 150px; object-fit: cover; margin: 0 auto 24px; display: block; border-radius: 12px; border: 2px solid #B87A3D55; box-shadow: 0 16px 36px -12px rgba(0,0,0,0.6); background: #FBF8F0; padding: 6px; }
     .adv-offer-label { font-family: 'DM Sans', sans-serif; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #B87A3D; font-weight: 600; }
     .adv-offer-title { font-family: 'EB Garamond', serif; font-size: clamp(30px, 5vw, 44px); line-height: 1.08; font-weight: 500; margin-top: 12px; }
     .adv-offer-title em { font-style: italic; color: #B87A3D; }
@@ -176,12 +176,15 @@
     .adv-offer-sub { font-family: 'DM Sans', sans-serif; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #C8D8CF; }
     .adv-countdown { font-family: 'EB Garamond', serif; font-size: 52px; font-weight: 500; letter-spacing: 0.04em; color: #F5F0E6; margin-top: 4px; font-variant-numeric: tabular-nums; line-height: 1; }
     .adv-offer-list { list-style: none; padding: 0; margin: 28px auto 0; max-width: 360px; text-align: left; border-top: 1px solid #F5F0E614; padding-top: 24px; }
-    .adv-offer .adv-offer-list li { position: relative; padding-left: 26px; font-family: 'DM Sans', sans-serif; font-size: 15px; line-height: 1.6; color: #F5F0E6; margin-top: 14px; font-weight: 400; }
+    .adv-offer .adv-offer-list li { position: relative; padding-left: 0; font-family: 'DM Sans', sans-serif; font-size: 15px; line-height: 1.6; color: #F5F0E6; margin-top: 16px; font-weight: 400; display: flex; align-items: flex-start; gap: 12px; }
     .adv-offer .adv-offer-list li:first-child { margin-top: 0; }
-    .adv-offer .adv-offer-list li::before { content: '✦'; position: absolute; left: 0; top: 2px; color: #B87A3D; font-size: 11px; }
+    .adv-offer .adv-offer-list li::before { display: none; }
+    .adv-offer-icon { flex-shrink: 0; color: #B87A3D; display: flex; align-items: center; justify-content: center; margin-top: 3px; }
+    .adv-offer-icon svg { width: 18px; height: 18px; stroke-width: 2.2; display: block; }
+    .adv-offer-text { flex: 1; }
     .adv-offer .adv-cta { margin: 28px 0 16px; box-shadow: 0 16px 30px -16px #00000066; }
-    .adv-offer-fine { font-family: 'DM Sans', sans-serif; font-size: 12px; letter-spacing: 0.04em; color: #B8CCBF; text-align: center; }
-    .adv-offer-fine strong { color: #F5F0E6; font-weight: 600; }
+    .adv .adv-offer .adv-offer-fine { font-family: 'DM Sans', sans-serif; font-size: 13px; letter-spacing: 0.04em; color: #B8CCBF; text-align: center; margin-top: 16px; line-height: 1.5; }
+    .adv .adv-offer .adv-offer-fine strong { color: #F5F0E6; font-weight: 600; }
 
     /* comments */
     .adv-comments { margin-top: 28px; }
@@ -313,10 +316,7 @@
 
   <!-- IMAGE PLACEHOLDER 1: Split image — left: luxury facial skincare routine (serums, vitamin C, elegant packaging). Right: same woman's scalp routine (generic drugstore shampoo, rosemary oil, biotin pills). Same person, two different standards of care. -->
   <figure class="adv-fig">
-    <div class="adv-ph">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path stroke-linecap="round" stroke-linejoin="round" d="M3 9h18M9 21V9"/></svg>
-      <span>Split image: Left — high-end facial skincare routine (serums, actives, clinical packaging). Right — same woman's scalp routine (generic shampoo, rosemary oil, biotin pills). Same person. Two different standards of care.</span>
-    </div>
+    <img src="brand_assets/skinification-split-routine.png" alt="Split image: high-end facial skincare routine on the left, neglected scalp routine on the right" loading="lazy" />
     <figcaption>The gap between how you treat your face and how you treat your scalp is where your hair loss lives.</figcaption>
   </figure>
 
@@ -335,10 +335,7 @@
 
   <!-- IMAGE PLACEHOLDER 2: Lab report / bloodwork panel with “Everything Normal” stamped across it. Woman's reflection visible in background showing visible crown thinning. Contrast between what the doctor sees vs. what she sees in the mirror. -->
   <figure class=”adv-fig”>
-    <div class=”adv-ph”>
-      <svg viewBox=”0 0 24 24” fill=”none” stroke=”currentColor” stroke-width=”1.5”><path stroke-linecap=”round” stroke-linejoin=”round” d=”M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z”/></svg>
-      <span>Photo: Lab report or bloodwork panel — “Everything Normal” stamped across the page — while the woman's reflection in the background shows visible thinning at the crown. The gap between clinical readings and lived reality.</span>
-    </div>
+    <img src=”brand_assets/hf_20260619_162242_60e62a24-92ed-493a-9123-b7e1abbca071.png” alt=”Lab report stamped Everything Normal beside a woman's reflection showing crown thinning” loading=”lazy” />
     <figcaption>”Your bloodwork is perfect.” Meanwhile your crown is disappearing.</figcaption>
   </figure>
 
@@ -389,10 +386,7 @@
 
   <!-- IMAGE PLACEHOLDER 3: Scientific diagram — cross-section of a scalp/follicle. Left side: regular serum sitting on the scalp surface, blocked at the outer skin layer (label: "0.3% depth — never reaches the root"). Right side: Scalpi's tiny carriers traveling down the follicle canal all the way to the root base (label: "70% depth — stop signal blocked, growth restored"). Clean, medical illustration style. -->
   <figure class="adv-fig">
-    <div class="adv-ph">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6"/></svg>
-      <span>Diagram: Cross-section of scalp. Left side — regular serum molecules sitting on the surface, blocked at the top layer, barely penetrating (0.3% depth). Right side — Scalpi's tiny liquid carriers traveling all the way down the follicle canal, reaching the base of the root at 70% depth. Label the "stop signal blocked" zone at the root base.</span>
-    </div>
+    <img src="brand_assets/follicle-depth-diagram.png" alt="Scalp cross-section diagram comparing regular serum depth (0.3%) versus Scalpi liposomal depth (70%)" loading="lazy" />
     <figcaption>Regular serums barely scratch the surface. Scalpi reaches 70% of the way down each follicle — past the barrier, to the root where the stop signal is blocked and growth begins.</figcaption>
   </figure>
 
@@ -475,10 +469,7 @@
 
   <!-- IMAGE PLACEHOLDER 4: Lifestyle photo — woman in her 50s, hair worn down, natural window light. She's looking in the mirror with quiet confidence. Not a dramatic transformation shot — just her, her hair, looking like herself again. Warm, realistic, not overly staged. -->
   <figure class="adv-fig">
-    <div class="adv-ph" style="aspect-ratio: 16/7;">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg>
-      <span>Photo: Woman, 50s, hair down, natural light — looking directly into the mirror with calm confidence. Not a before/after. Just her, her hair, and the fact that she's no longer flinching.</span>
-    </div>
+    <img src="brand_assets/mirror-no-flinch-week-8.png" alt="Woman in her 50s looking at her reflection with quiet confidence" loading="lazy" style="aspect-ratio: 16/7; object-fit: cover; width: 100%;" />
     <figcaption>Week 8. The morning you stop dreading your own reflection.</figcaption>
   </figure>
 
@@ -510,16 +501,16 @@
         <img src="brand_assets/ugc-06-latina-bathroom.png" alt="Isabella R. holding her Scalpi bottle" loading="lazy" />
         <span class="adv-ugc-item-hint">Read her story</span>
       </div>
-      <div class="adv-ugc-item" data-name="Helen B., 53" data-meta="Atlanta, GA · Month 3" data-quote="I'll be honest — my biggest fear wasn't going bald. It was losing the part of myself that turns heads. Month three and my husband asked what I was doing differently. He told me I looked beautiful out of nowhere. That's not happened in two years. I almost cried in the kitchen." data-img="brand_assets/ugc-04-saltpepper-vanity.png">
-        <img src="brand_assets/ugc-04-saltpepper-vanity.png" alt="Helen B. holding her Scalpi bottle" loading="lazy" />
+      <div class="adv-ugc-item" data-name="Helen B., 53" data-meta="Atlanta, GA · Month 3" data-quote="I'll be honest — my biggest fear wasn't going bald. It was losing the part of myself that turns heads. Month three and my husband asked what I was doing differently. He told me I looked beautiful out of nowhere. That's not happened in two years. I almost cried in the kitchen." data-img="brand_assets/ugc-07-asian-vanity.png">
+        <img src="brand_assets/ugc-07-asian-vanity.png" alt="Helen B. holding her Scalpi bottle" loading="lazy" />
         <span class="adv-ugc-item-hint">Read her story</span>
       </div>
-      <div class="adv-ugc-item" data-name="Sienna K., 44" data-meta="Nashville, TN · Week 6" data-quote="I was spending $90 a month on Viviscal and seeing nothing. Switched to Scalpi and within a month my husband noticed before I said a word. That's when I knew it was real." data-img="brand_assets/ugc-03-auburn-kitchen.png">
-        <img src="brand_assets/ugc-03-auburn-kitchen.png" alt="Sienna K. holding her Scalpi bottle" loading="lazy" />
+      <div class="adv-ugc-item" data-name="Maggie L., 48" data-meta="Burlington, VT · Week 7" data-quote="I'd been pulling my hair back for so long I forgot what it looked like down. Week seven I wore a low ponytail to my book club and one of the women asked if I'd done something different with my cut. I hadn't touched my hair in six weeks." data-img="brand_assets/ugc-08-redhead-pixie-armchair.png">
+        <img src="brand_assets/ugc-08-redhead-pixie-armchair.png" alt="Maggie L. holding her Scalpi bottle" loading="lazy" />
         <span class="adv-ugc-item-hint">Read her story</span>
       </div>
-      <div class="adv-ugc-item" data-name="Rachel M., 47" data-meta="Portland, OR · Week 4" data-quote="I counted 83 hairs on my bathroom floor after one wash. Three weeks into Scalpi, I had to count twice because I thought I was imagining it. My drain is basically clean now." data-img="brand_assets/ugc-01-brunette-bathroom.png">
-        <img src="brand_assets/ugc-01-brunette-bathroom.png" alt="Rachel M. holding her Scalpi bottle" loading="lazy" />
+      <div class="adv-ugc-item" data-name="Renee A., 56" data-meta="Charleston, SC · Month 4" data-quote="My stylist noticed before I said anything. She ran her fingers through my hair at my month-four cut and said she needed to take off less than usual because of all the new growth coming in. Four months and my stylist is the one asking what I'm using." data-img="brand_assets/ugc-09-curly-kitchen.png">
+        <img src="brand_assets/ugc-09-curly-kitchen.png" alt="Renee A. holding her Scalpi bottle" loading="lazy" />
         <span class="adv-ugc-item-hint">Read her story</span>
       </div>
     </div>
@@ -546,7 +537,7 @@
 
   <!-- OFFER BLOCK -->
   <div class="adv-offer" id="offer">
-    <img class="adv-offer-media" src="brand_assets/hf_20260616_102218_118d3e1f-c0ba-4c3b-8114-ca456f8a0225.png" alt="Scalpi bottle" loading="lazy" />
+    <img class="adv-offer-media" src="brand_assets/scalpi-bottle-product.png" alt="Scalpi bottle" loading="lazy" />
     <div class="adv-offer-label">✦ Limited Stock</div>
     <div class="adv-offer-title">Get Scalpi Now —<br/><em>up to 60% off</em></div>
     <div class="adv-offer-urgency">
@@ -554,10 +545,22 @@
       <div class="adv-countdown cd">15:00</div>
     </div>
     <ul class="adv-offer-list">
-      <li>Liquid liposomal delivery · 60-second nightly ritual</li>
-      <li>Recommended by Dr. Margaret Holloway, IAT-Certified Trichologist</li>
-      <li>Formulated in the USA · third-party tested</li>
-      <li>60-Day Guarantee — baby hairs or your money back</li>
+      <li>
+        <span class="adv-offer-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a7 7 0 0 0 7-7c0-4.3-7-13-7-13S5 10.7 5 15a7 7 0 0 0 7 7z"/></svg></span>
+        <span class="adv-offer-text">Liquid liposomal delivery · 60-second nightly ritual</span>
+      </li>
+      <li>
+        <span class="adv-offer-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 11 2 2 4-4"/></svg></span>
+        <span class="adv-offer-text">Recommended by Dr. Margaret Holloway, IAT-Certified Trichologist</span>
+      </li>
+      <li>
+        <span class="adv-offer-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.31L3.39 19A1 1 0 0 0 4 20.5h16a1 1 0 0 0 .61-1.5L14 9.31V2h-4z"/><path d="M8.5 2h7M7 14h10"/></svg></span>
+        <span class="adv-offer-text">Formulated in the USA · third-party tested</span>
+      </li>
+      <li>
+        <span class="adv-offer-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+        <span class="adv-offer-text">60-Day Guarantee — baby hairs or your money back</span>
+      </li>
     </ul>
     <a href="index.html#purchase" class="adv-cta">Check Availability Now →</a>
     <p class="adv-offer-fine"><strong>HIGH risk of sell-out.</strong> FREE shipping today.</p>
@@ -640,9 +643,18 @@
       <div class="adv-countdown cd">15:00</div>
     </div>
     <ul class="adv-offer-list">
-      <li>Up to 60% off today, while stock lasts</li>
-      <li>60-Day Guarantee — baby hairs or your money back</li>
-      <li>FREE shipping on every order today</li>
+      <li>
+        <span class="adv-offer-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg></span>
+        <span class="adv-offer-text">Up to 60% off today, while stock lasts</span>
+      </li>
+      <li>
+        <span class="adv-offer-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+        <span class="adv-offer-text">60-Day Guarantee — baby hairs or your money back</span>
+      </li>
+      <li>
+        <span class="adv-offer-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></span>
+        <span class="adv-offer-text">FREE shipping on every order today</span>
+      </li>
     </ul>
     <a href="index.html#purchase" class="adv-cta">Check Availability Now →</a>
     <p class="adv-offer-fine"><strong>Your follicles are still alive.</strong> Start while they can still respond.</p>
