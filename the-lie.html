@@ -8,35 +8,8 @@
   <link rel="icon" href="data:," />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,500;9..40,600&display=swap" rel="stylesheet" />
-
-  <!-- ── META PIXEL ── replace REPLACE_WITH_META_PIXEL_ID with the Pixel ID from Meta Events Manager -->
-  <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '972200958988568');
-    fbq('track', 'PageView');
-    fbq('track', 'ViewContent', { content_name: 'Scalpi Advertorial', content_type: 'article' });
-  </script>
-  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=972200958988568&ev=PageView&noscript=1" /></noscript>
-
-  <!-- ── KLAVIYO ── -->
-  <script type="text/javascript" async src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=S3D76Q"></script>
-
-  <!-- ── MICROSOFT CLARITY ── replace REPLACE_WITH_CLARITY_PROJECT_ID with your Project ID from clarity.microsoft.com -->
-  <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "REPLACE_WITH_CLARITY_PROJECT_ID");
-  </script>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,500;9..40,600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,500;9..40,600&display=swap" rel="stylesheet" /></noscript>
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -47,11 +20,11 @@
     .adv-top { background: #F5F0E6; border-bottom: 1px solid #1C3A2A18; }
     .adv-top-inner { max-width: 720px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; }
     .adv-logo { font-family: 'EB Garamond', serif; font-size: 22px; font-weight: 500; color: #1C3A2A; letter-spacing: -0.02em; }
-    .adv-tag { font-family: 'DM Sans', sans-serif; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: #6B8F79; border: 1px solid #1C3A2A25; padding: 4px 9px; }
+    .adv-tag { font-family: 'DM Sans', sans-serif; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: #2E5A42; border: 1px solid #1C3A2A25; padding: 4px 9px; }
 
     /* ── ARTICLE SHELL ── */
     .adv { max-width: 720px; margin: 0 auto; padding: 0 24px 64px; }
-    .adv-kicker { font-family: 'DM Sans', sans-serif; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #B87A3D; font-weight: 600; margin-top: 44px; }
+    .adv-kicker { font-family: 'DM Sans', sans-serif; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #8B6028; font-weight: 600; margin-top: 44px; }
     .adv-h1 { font-family: 'EB Garamond', serif; font-size: clamp(34px, 6vw, 54px); line-height: 1.07; letter-spacing: -0.02em; color: #1C3A2A; font-weight: 500; margin-top: 14px; }
     .adv-h1 em { font-style: italic; color: #B87A3D; }
     .adv-subhead { font-family: 'EB Garamond', serif; font-style: italic; font-size: clamp(19px, 3vw, 24px); color: #3D6B52; margin-top: 16px; line-height: 1.35; }
@@ -60,7 +33,7 @@
     /* byline */
     .adv-byline { display: flex; align-items: center; gap: 12px; margin: 26px 0 8px; padding: 16px 0; border-top: 1px solid #1C3A2A18; border-bottom: 1px solid #1C3A2A18; }
     .adv-avatar { width: 44px; height: 44px; border-radius: 999px; background: #1C3A2A; color: #F5F0E6; font-family: 'EB Garamond', serif; font-size: 18px; font-weight: 500; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .adv-byline-meta { font-family: 'DM Sans', sans-serif; font-size: 13px; line-height: 1.5; color: #6B6B62; }
+    .adv-byline-meta { font-family: 'DM Sans', sans-serif; font-size: 13px; line-height: 1.5; color: #575750; }
     .adv-byline-meta strong { color: #1C3A2A; font-weight: 600; }
 
     /* body */
@@ -80,7 +53,7 @@
     /* week-by-week / definition list */
     .adv-weeks { margin-top: 24px; border-top: 1px solid #1C3A2A18; }
     .adv-week { display: grid; grid-template-columns: 92px 1fr; gap: 16px; padding: 16px 0; border-bottom: 1px solid #1C3A2A18; align-items: baseline; }
-    .adv-week dt { font-family: 'DM Sans', sans-serif; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: #B87A3D; font-weight: 600; }
+    .adv-week dt { font-family: 'DM Sans', sans-serif; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: #8B6028; font-weight: 600; }
     .adv-week dd { font-size: 17px; line-height: 1.55; color: #2C2C26; }
 
     /* pull quote */
@@ -95,7 +68,7 @@
     /* figures */
     figure { margin: 34px 0; }
     .adv-fig img { width: 100%; display: block; box-shadow: 0 22px 44px -28px #1C3A2A66; }
-    figcaption { font-family: 'DM Sans', sans-serif; font-size: 12.5px; line-height: 1.5; color: #7A7A70; margin-top: 10px; font-style: normal; }
+    figcaption { font-family: 'DM Sans', sans-serif; font-size: 12.5px; line-height: 1.5; color: #606058; margin-top: 10px; font-style: normal; }
 
     /* before / after */
     .adv-ba-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
@@ -169,7 +142,7 @@
     .adv-offer { background: #1C3A2A; color: #F5F0E6; padding: 48px 32px 40px; margin: 48px 0; text-align: center; position: relative; overflow: hidden; }
     .adv-offer::after { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 80% -10%, #B87A3D33, transparent 55%); pointer-events: none; }
     .adv-offer-media { width: 150px; height: 150px; object-fit: cover; margin: 0 auto 24px; display: block; border-radius: 12px; border: 2px solid #B87A3D55; box-shadow: 0 16px 36px -12px rgba(0,0,0,0.6); background: #FBF8F0; padding: 6px; }
-    .adv-offer-label { font-family: 'DM Sans', sans-serif; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #B87A3D; font-weight: 600; }
+    .adv-offer-label { font-family: 'DM Sans', sans-serif; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #D4944A; font-weight: 600; }
     .adv-offer-title { font-family: 'EB Garamond', serif; font-size: clamp(30px, 5vw, 44px); line-height: 1.08; font-weight: 500; margin-top: 12px; }
     .adv-offer-title em { font-style: italic; color: #B87A3D; }
     .adv-offer-urgency { margin: 24px auto 0; padding: 16px 20px; border: 1px solid #F5F0E620; max-width: 320px; }
@@ -193,11 +166,11 @@
     .adv-c-body { flex: 1; }
     .adv-c-name { font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 600; color: #1C3A2A; }
     .adv-c-text { font-family: 'DM Sans', sans-serif; font-size: 15px; line-height: 1.55; color: #2C2C26; margin-top: 4px; font-weight: 300; }
-    .adv-c-meta { font-family: 'DM Sans', sans-serif; font-size: 12px; color: #8A8A80; margin-top: 8px; }
+    .adv-c-meta { font-family: 'DM Sans', sans-serif; font-size: 12px; color: #606058; margin-top: 8px; }
 
     /* concept / framework callout box */
     .adv-concept { border-left: 3px solid #B87A3D; padding: 24px 24px 20px 28px; margin: 36px 0; background: #FBF8F0; }
-    .adv-concept-label { font-family: 'DM Sans', sans-serif; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: #B87A3D; font-weight: 600; margin-bottom: 8px; }
+    .adv-concept-label { font-family: 'DM Sans', sans-serif; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: #8B6028; font-weight: 600; margin-bottom: 8px; }
     .adv-concept-title { font-family: 'EB Garamond', serif; font-size: clamp(20px, 3.5vw, 27px); font-weight: 500; color: #1C3A2A; margin-bottom: 10px; line-height: 1.15; }
     .adv-concept-body { font-family: 'DM Sans', sans-serif; font-size: 15px; line-height: 1.65; color: #4A4A44; font-weight: 300; }
 
@@ -208,16 +181,16 @@
     .adv-chain-step.is-bad { background: #9B3B2A0A; border-color: #9B3B2A22; }
     .adv-chain-step.is-bad strong { color: #9B3B2A; }
     .adv-chain-step.is-solution { background: #1C3A2A; color: #A9C2B2; border-color: #1C3A2A; }
-    .adv-chain-step.is-solution strong { color: #B87A3D; font-size: 15px; }
+    .adv-chain-step.is-solution strong { color: #D4944A; font-size: 15px; }
     .adv-chain-arrow { display: flex; align-items: center; justify-content: center; padding: 0 6px; color: #B87A3D; font-size: 16px; font-weight: 600; flex-shrink: 0; }
-    .adv-chain-caption { font-family: 'DM Sans', sans-serif; font-size: 11px; letter-spacing: 0.04em; color: #7A7A70; margin-top: 6px; margin-bottom: 24px; }
+    .adv-chain-caption { font-family: 'DM Sans', sans-serif; font-size: 11px; letter-spacing: 0.04em; color: #606058; margin-top: 6px; margin-bottom: 24px; }
 
     /* footer */
     .adv-foot { background: #1A1A18; color: #6B8F79; padding: 48px 24px 40px; margin-top: 8px; }
     .adv-foot-inner { max-width: 720px; margin: 0 auto; }
     .adv-foot .adv-logo { color: #F5F0E6; display: block; margin-bottom: 14px; }
-    .adv-foot-dis { font-family: 'DM Sans', sans-serif; font-size: 11px; line-height: 1.65; color: #5A6B60; margin-bottom: 16px; }
-    .adv-foot-cc { font-family: 'DM Sans', sans-serif; font-size: 12px; color: #5A6B60; }
+    .adv-foot-dis { font-family: 'DM Sans', sans-serif; font-size: 11px; line-height: 1.65; color: #6B8A79; margin-bottom: 16px; }
+    .adv-foot-cc { font-family: 'DM Sans', sans-serif; font-size: 12px; color: #6B8A79; }
     .adv-foot-cc a { color: #B87A3D; text-decoration: none; }
 
     @media (max-width: 600px) {
@@ -239,7 +212,7 @@
   </div>
 </header>
 
-<article class="adv">
+<article class="adv" role="main" id="main-content">
   <div class="adv-kicker">“Just Part Of Aging”</div>
   <h1 class="adv-h1">The Lie <em>30 Million Women</em> Believed While Losing Their Hair</h1>
   <p class="adv-subhead">And the real reason your crown is disappearing.</p>
@@ -263,7 +236,7 @@
   </div>
 
   <figure class="adv-fig">
-    <img src="brand_assets/dr-holloway-desk.png" alt="Dr. Margaret Holloway at her desk reviewing a scalp imaging report" loading="lazy" />
+    <img src="brand_assets/dr-holloway-desk.webp" alt="Dr. Margaret Holloway at her desk reviewing a scalp imaging report" width="720" height="480" fetchpriority="high" decoding="async" />
     <figcaption>Dr. Holloway has spent 22 years studying the hair follicle as a living organ.</figcaption>
   </figure>
 
@@ -316,14 +289,14 @@
 
   <!-- IMAGE PLACEHOLDER 1: Split image — left: luxury facial skincare routine (serums, vitamin C, elegant packaging). Right: same woman's scalp routine (generic drugstore shampoo, rosemary oil, biotin pills). Same person, two different standards of care. -->
   <figure class="adv-fig">
-    <img src="brand_assets/skinification-split-routine.png" alt="Split image: high-end facial skincare routine on the left, neglected scalp routine on the right" loading="lazy" />
+    <img src="brand_assets/skinification-split-routine.webp" alt="Split image: high-end facial skincare routine on the left, neglected scalp routine on the right" width="720" height="450" loading="lazy" decoding="async" />
     <figcaption>The gap between how you treat your face and how you treat your scalp is where your hair loss lives.</figcaption>
   </figure>
 
   <h2>Here's Why Nothing Else Worked</h2>
 
   <figure class="adv-fig">
-    <img src="brand_assets/failed-products-counter.png" alt="Cluttered bathroom counter covered in discarded hair-loss supplements and oils" loading="lazy" />
+    <img src="brand_assets/failed-products-counter.webp" alt="Cluttered bathroom counter covered in discarded hair-loss supplements and oils" width="720" height="480" loading="lazy" decoding="async" />
     <figcaption>Thousands of dollars of products — every one of them sitting on top of a sealed door.</figcaption>
   </figure>
 
@@ -335,7 +308,7 @@
 
   <!-- IMAGE PLACEHOLDER 2: Lab report / bloodwork panel with “Everything Normal” stamped across it. Woman's reflection visible in background showing visible crown thinning. Contrast between what the doctor sees vs. what she sees in the mirror. -->
   <figure class=”adv-fig”>
-    <img src=”brand_assets/hf_20260619_162242_60e62a24-92ed-493a-9123-b7e1abbca071.png” alt=”Lab report stamped Everything Normal beside a woman's reflection showing crown thinning” loading=”lazy” />
+    <img src=”brand_assets/hf_20260619_162242_60e62a24-92ed-493a-9123-b7e1abbca071.webp” alt=”Lab report stamped Everything Normal beside a woman's reflection showing crown thinning” width=”720” height=”480” loading=”lazy” decoding=”async” />
     <figcaption>”Your bloodwork is perfect.” Meanwhile your crown is disappearing.</figcaption>
   </figure>
 
@@ -349,8 +322,8 @@
 
   <figure class="adv-fig">
     <div class="adv-ba-grid">
-      <div class="adv-ba-item"><img src="brand_assets/baldinglikebaldwin.jpg" alt="Linda before Scalpi" loading="lazy" /><span>Before</span></div>
-      <div class="adv-ba-item is-after"><img src="brand_assets/nobaldy3.jpg" alt="Linda after Scalpi" loading="lazy" /><span>8 Weeks</span></div>
+      <div class="adv-ba-item"><img src="brand_assets/baldinglikebaldwin.jpg" alt="Linda before Scalpi" width="354" height="472" loading="lazy" decoding="async" /><span>Before</span></div>
+      <div class="adv-ba-item is-after"><img src="brand_assets/nobaldy3.jpg" alt="Linda after Scalpi" width="354" height="472" loading="lazy" decoding="async" /><span>8 Weeks</span></div>
     </div>
     <figcaption>Linda, 54 — crown and part-line, eight weeks apart.</figcaption>
   </figure>
@@ -362,7 +335,7 @@
   <h2>I Dismissed It — Until My Sister Called Me Crying</h2>
 
   <figure class="adv-fig">
-    <img src="brand_assets/scalpi-baby-hairs-temple.png" alt="Woman with fuller hair holding a Scalpi bottle" loading="lazy" />
+    <img src="brand_assets/scalpi-baby-hairs-temple.webp" alt="Woman with fuller hair holding a Scalpi bottle" width="720" height="480" loading="lazy" decoding="async" />
     <figcaption>Baby hairs along the temple and hairline — the first sign the follicle is feeding again.</figcaption>
   </figure>
 
@@ -386,7 +359,7 @@
 
   <!-- IMAGE PLACEHOLDER 3: Scientific diagram — cross-section of a scalp/follicle. Left side: regular serum sitting on the scalp surface, blocked at the outer skin layer (label: "0.3% depth — never reaches the root"). Right side: Scalpi's tiny carriers traveling down the follicle canal all the way to the root base (label: "70% depth — stop signal blocked, growth restored"). Clean, medical illustration style. -->
   <figure class="adv-fig">
-    <img src="brand_assets/follicle-depth-diagram.png" alt="Scalp cross-section diagram comparing regular serum depth (0.3%) versus Scalpi liposomal depth (70%)" loading="lazy" />
+    <img src="brand_assets/follicle-depth-diagram.webp" alt="Scalp cross-section diagram comparing regular serum depth (0.3%) versus Scalpi liposomal depth (70%)" width="720" height="450" loading="lazy" decoding="async" />
     <figcaption>Regular serums barely scratch the surface. Scalpi reaches 70% of the way down each follicle — past the barrier, to the root where the stop signal is blocked and growth begins.</figcaption>
   </figure>
 
@@ -395,7 +368,7 @@
   <h2>This Is The Part Nobody Believes</h2>
 
   <figure class="adv-fig">
-    <img src="brand_assets/scalpi-evening-dropper-ritual.png" alt="Woman applying Scalpi dropper to her scalp in the evening" loading="lazy" />
+    <img src="brand_assets/scalpi-evening-dropper-ritual.webp" alt="Woman applying Scalpi dropper to her scalp in the evening" width="720" height="480" loading="lazy" decoding="async" />
     <figcaption>One dropper, massaged into the scalp at night. Sixty seconds. That's the whole ritual.</figcaption>
   </figure>
 
@@ -411,7 +384,7 @@
   <h2>What To Expect (Week By Week)</h2>
 
   <figure class="adv-fig">
-    <img src="brand_assets/brush-split-panel.png" alt="Side-by-side comparison: hair-clogged brush versus a clean brush beside a Scalpi bottle" loading="lazy" />
+    <img src="brand_assets/brush-split-panel.webp" alt="Side-by-side comparison: hair-clogged brush versus a clean brush beside a Scalpi bottle" width="720" height="450" loading="lazy" decoding="async" />
     <figcaption>The clearest early sign Scalpi is working: the drain stays clean.</figcaption>
   </figure>
 
@@ -432,8 +405,8 @@
 
   <figure class="adv-fig">
     <div class="adv-ba-grid">
-      <div class="adv-ba-item"><img src="brand_assets/baldinglikebaldwin2.jpg" alt="Patricia before Scalpi" loading="lazy" /><span>Before</span></div>
-      <div class="adv-ba-item is-after"><img src="brand_assets/nobaldy.jpg" alt="Patricia after Scalpi" loading="lazy" /><span>12 Weeks</span></div>
+      <div class="adv-ba-item"><img src="brand_assets/baldinglikebaldwin2.jpg" alt="Patricia before Scalpi" width="354" height="472" loading="lazy" decoding="async" /><span>Before</span></div>
+      <div class="adv-ba-item is-after"><img src="brand_assets/nobaldy.jpg" alt="Patricia after Scalpi" width="354" height="472" loading="lazy" decoding="async" /><span>12 Weeks</span></div>
     </div>
     <figcaption>Patricia, 56 — twelve weeks on Scalpi.</figcaption>
   </figure>
@@ -445,8 +418,8 @@
 
   <figure class="adv-fig">
     <div class="adv-ba-grid">
-      <div class="adv-ba-item"><img src="brand_assets/baldinglikebaldwin3.jpg" alt="Theresa before Scalpi" loading="lazy" /><span>Before</span></div>
-      <div class="adv-ba-item is-after"><img src="brand_assets/nobaldy2.jpg" alt="Theresa after Scalpi" loading="lazy" /><span>6 Months</span></div>
+      <div class="adv-ba-item"><img src="brand_assets/baldinglikebaldwin3.jpg" alt="Theresa before Scalpi" width="354" height="472" loading="lazy" decoding="async" /><span>Before</span></div>
+      <div class="adv-ba-item is-after"><img src="brand_assets/nobaldy2.jpg" alt="Theresa after Scalpi" width="354" height="472" loading="lazy" decoding="async" /><span>6 Months</span></div>
     </div>
     <figcaption>Theresa, 49 — six months apart.</figcaption>
   </figure>
@@ -469,7 +442,7 @@
 
   <!-- IMAGE PLACEHOLDER 4: Lifestyle photo — woman in her 50s, hair worn down, natural window light. She's looking in the mirror with quiet confidence. Not a dramatic transformation shot — just her, her hair, looking like herself again. Warm, realistic, not overly staged. -->
   <figure class="adv-fig">
-    <img src="brand_assets/mirror-no-flinch-week-8.png" alt="Woman in her 50s looking at her reflection with quiet confidence" loading="lazy" style="aspect-ratio: 16/7; object-fit: cover; width: 100%;" />
+    <img src="brand_assets/mirror-no-flinch-week-8.webp" alt="Woman in her 50s looking at her reflection with quiet confidence" width="720" height="315" loading="lazy" decoding="async" style="aspect-ratio: 16/7; object-fit: cover; width: 100%;" />
     <figcaption>Week 8. The morning you stop dreading your own reflection.</figcaption>
   </figure>
 
@@ -477,40 +450,40 @@
   <p>They tried it anyway. Here's what they're sending me.</p>
   <figure>
     <div class="adv-ugc">
-      <div class="adv-ugc-item" data-name="Rachel M., 47" data-meta="Portland, OR · Week 4" data-quote="I counted 83 hairs on my bathroom floor after one wash. Three weeks into Scalpi, I had to count twice because I thought I was imagining it. My drain is basically clean now." data-img="brand_assets/ugc-01-brunette-bathroom.png">
-        <img src="brand_assets/ugc-01-brunette-bathroom.png" alt="Rachel M. holding her Scalpi bottle" loading="lazy" />
+      <div class="adv-ugc-item" data-name="Rachel M., 47" data-meta="Portland, OR · Week 4" data-quote="I counted 83 hairs on my bathroom floor after one wash. Three weeks into Scalpi, I had to count twice because I thought I was imagining it. My drain is basically clean now." data-img="brand_assets/ugc-01-brunette-bathroom.webp">
+        <img src="brand_assets/ugc-01-brunette-bathroom.webp" alt="Rachel M. holding her Scalpi bottle" width="400" height="400" loading="lazy" decoding="async" />
         <span class="adv-ugc-item-hint">Read her story</span>
       </div>
-      <div class="adv-ugc-item" data-name="Carol T., 61" data-meta="Phoenix, AZ · Month 2" data-quote="My doctor said the thinning was just menopause and to accept it. I wasn't ready to accept it. Six weeks later my ponytail is visibly thicker and I actually enjoy looking in the mirror again." data-img="brand_assets/ugc-02-silver-bedroom.png">
-        <img src="brand_assets/ugc-02-silver-bedroom.png" alt="Carol T. holding her Scalpi bottle" loading="lazy" />
+      <div class="adv-ugc-item" data-name="Carol T., 61" data-meta="Phoenix, AZ · Month 2" data-quote="My doctor said the thinning was just menopause and to accept it. I wasn't ready to accept it. Six weeks later my ponytail is visibly thicker and I actually enjoy looking in the mirror again." data-img="brand_assets/ugc-02-silver-bedroom.webp">
+        <img src="brand_assets/ugc-02-silver-bedroom.webp" alt="Carol T. holding her Scalpi bottle" width="400" height="400" loading="lazy" decoding="async" />
         <span class="adv-ugc-item-hint">Read her story</span>
       </div>
-      <div class="adv-ugc-item" data-name="Sienna K., 44" data-meta="Nashville, TN · Week 6" data-quote="I was spending $90 a month on Viviscal and seeing nothing. Switched to Scalpi and within a month my husband noticed before I said a word. That's when I knew it was real." data-img="brand_assets/ugc-03-auburn-kitchen.png">
-        <img src="brand_assets/ugc-03-auburn-kitchen.png" alt="Sienna K. holding her Scalpi bottle" loading="lazy" />
+      <div class="adv-ugc-item" data-name="Sienna K., 44" data-meta="Nashville, TN · Week 6" data-quote="I was spending $90 a month on Viviscal and seeing nothing. Switched to Scalpi and within a month my husband noticed before I said a word. That's when I knew it was real." data-img="brand_assets/ugc-03-auburn-kitchen.webp">
+        <img src="brand_assets/ugc-03-auburn-kitchen.webp" alt="Sienna K. holding her Scalpi bottle" width="400" height="400" loading="lazy" decoding="async" />
         <span class="adv-ugc-item-hint">Read her story</span>
       </div>
-      <div class="adv-ugc-item" data-name="Diane W., 55" data-meta="Denver, CO · Month 3" data-quote="My part has been getting wider for four years. I'd stopped wearing my hair down entirely. Five weeks on Scalpi and I wore it down to dinner last Saturday for the first time since 2020." data-img="brand_assets/ugc-04-saltpepper-vanity.png">
-        <img src="brand_assets/ugc-04-saltpepper-vanity.png" alt="Diane W. holding her Scalpi bottle" loading="lazy" />
+      <div class="adv-ugc-item" data-name="Diane W., 55" data-meta="Denver, CO · Month 3" data-quote="My part has been getting wider for four years. I'd stopped wearing my hair down entirely. Five weeks on Scalpi and I wore it down to dinner last Saturday for the first time since 2020." data-img="brand_assets/ugc-04-saltpepper-vanity.webp">
+        <img src="brand_assets/ugc-04-saltpepper-vanity.webp" alt="Diane W. holding her Scalpi bottle" width="400" height="400" loading="lazy" decoding="async" />
         <span class="adv-ugc-item-hint">Read her story</span>
       </div>
-      <div class="adv-ugc-item" data-name="Tara B., 39" data-meta="Austin, TX · Week 5" data-quote="Everyone told me I was too young to be losing this much hair. The shedding was terrifying. Week two, the clumps got smaller. Week four, they were basically gone. I cried in the shower — happy tears." data-img="brand_assets/ugc-05-blonde-sofa.png">
-        <img src="brand_assets/ugc-05-blonde-sofa.png" alt="Tara B. holding her Scalpi bottle" loading="lazy" />
+      <div class="adv-ugc-item" data-name="Tara B., 39" data-meta="Austin, TX · Week 5" data-quote="Everyone told me I was too young to be losing this much hair. The shedding was terrifying. Week two, the clumps got smaller. Week four, they were basically gone. I cried in the shower — happy tears." data-img="brand_assets/ugc-05-blonde-sofa.webp">
+        <img src="brand_assets/ugc-05-blonde-sofa.webp" alt="Tara B. holding her Scalpi bottle" width="400" height="400" loading="lazy" decoding="async" />
         <span class="adv-ugc-item-hint">Read her story</span>
       </div>
-      <div class="adv-ugc-item" data-name="Isabella R., 52" data-meta="Miami, FL · Month 2" data-quote="Three rounds of biotin, two of rosemary oil, a round of Nutrafol. Nothing. Scalpi is the first thing that did something I could actually see and feel. My scalp doesn't itch anymore and I have baby hairs at my temples." data-img="brand_assets/ugc-06-latina-bathroom.png">
-        <img src="brand_assets/ugc-06-latina-bathroom.png" alt="Isabella R. holding her Scalpi bottle" loading="lazy" />
+      <div class="adv-ugc-item" data-name="Isabella R., 52" data-meta="Miami, FL · Month 2" data-quote="Three rounds of biotin, two of rosemary oil, a round of Nutrafol. Nothing. Scalpi is the first thing that did something I could actually see and feel. My scalp doesn't itch anymore and I have baby hairs at my temples." data-img="brand_assets/ugc-06-latina-bathroom.webp">
+        <img src="brand_assets/ugc-06-latina-bathroom.webp" alt="Isabella R. holding her Scalpi bottle" width="400" height="400" loading="lazy" decoding="async" />
         <span class="adv-ugc-item-hint">Read her story</span>
       </div>
-      <div class="adv-ugc-item" data-name="Helen B., 53" data-meta="Atlanta, GA · Month 3" data-quote="I'll be honest — my biggest fear wasn't going bald. It was losing the part of myself that turns heads. Month three and my husband asked what I was doing differently. He told me I looked beautiful out of nowhere. That's not happened in two years. I almost cried in the kitchen." data-img="brand_assets/ugc-07-asian-vanity.png">
-        <img src="brand_assets/ugc-07-asian-vanity.png" alt="Helen B. holding her Scalpi bottle" loading="lazy" />
+      <div class="adv-ugc-item" data-name="Helen B., 53" data-meta="Atlanta, GA · Month 3" data-quote="I'll be honest — my biggest fear wasn't going bald. It was losing the part of myself that turns heads. Month three and my husband asked what I was doing differently. He told me I looked beautiful out of nowhere. That's not happened in two years. I almost cried in the kitchen." data-img="brand_assets/ugc-07-asian-vanity.webp">
+        <img src="brand_assets/ugc-07-asian-vanity.webp" alt="Helen B. holding her Scalpi bottle" width="400" height="400" loading="lazy" decoding="async" />
         <span class="adv-ugc-item-hint">Read her story</span>
       </div>
-      <div class="adv-ugc-item" data-name="Maggie L., 48" data-meta="Burlington, VT · Week 7" data-quote="I'd been pulling my hair back for so long I forgot what it looked like down. Week seven I wore a low ponytail to my book club and one of the women asked if I'd done something different with my cut. I hadn't touched my hair in six weeks." data-img="brand_assets/ugc-08-redhead-pixie-armchair.png">
-        <img src="brand_assets/ugc-08-redhead-pixie-armchair.png" alt="Maggie L. holding her Scalpi bottle" loading="lazy" />
+      <div class="adv-ugc-item" data-name="Maggie L., 48" data-meta="Burlington, VT · Week 7" data-quote="I'd been pulling my hair back for so long I forgot what it looked like down. Week seven I wore a low ponytail to my book club and one of the women asked if I'd done something different with my cut. I hadn't touched my hair in six weeks." data-img="brand_assets/ugc-08-redhead-pixie-armchair.webp">
+        <img src="brand_assets/ugc-08-redhead-pixie-armchair.webp" alt="Maggie L. holding her Scalpi bottle" width="400" height="400" loading="lazy" decoding="async" />
         <span class="adv-ugc-item-hint">Read her story</span>
       </div>
-      <div class="adv-ugc-item" data-name="Renee A., 56" data-meta="Charleston, SC · Month 4" data-quote="My stylist noticed before I said anything. She ran her fingers through my hair at my month-four cut and said she needed to take off less than usual because of all the new growth coming in. Four months and my stylist is the one asking what I'm using." data-img="brand_assets/ugc-09-curly-kitchen.png">
-        <img src="brand_assets/ugc-09-curly-kitchen.png" alt="Renee A. holding her Scalpi bottle" loading="lazy" />
+      <div class="adv-ugc-item" data-name="Renee A., 56" data-meta="Charleston, SC · Month 4" data-quote="My stylist noticed before I said anything. She ran her fingers through my hair at my month-four cut and said she needed to take off less than usual because of all the new growth coming in. Four months and my stylist is the one asking what I'm using." data-img="brand_assets/ugc-09-curly-kitchen.webp">
+        <img src="brand_assets/ugc-09-curly-kitchen.webp" alt="Renee A. holding her Scalpi bottle" width="400" height="400" loading="lazy" decoding="async" />
         <span class="adv-ugc-item-hint">Read her story</span>
       </div>
     </div>
@@ -537,7 +510,7 @@
 
   <!-- OFFER BLOCK -->
   <div class="adv-offer" id="offer">
-    <img class="adv-offer-media" src="brand_assets/scalpi-bottle-product.png" alt="Scalpi bottle" loading="lazy" />
+    <img class="adv-offer-media" src="brand_assets/scalpi-bottle-product.webp" alt="Scalpi bottle" width="150" height="150" loading="lazy" decoding="async" />
     <div class="adv-offer-label">✦ Limited Stock</div>
     <div class="adv-offer-title">Get Scalpi Now —<br/><em>up to 60% off</em></div>
     <div class="adv-offer-urgency">
@@ -757,5 +730,41 @@
   })();
 </script>
 
+
+  <!-- ── ANALYTICS (deferred after page interactive) ── -->
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=972200958988568&ev=PageView&noscript=1" /></noscript>
+  <script>
+    (function() {
+      function loadTrackers() {
+        // Meta Pixel
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window,document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '972200958988568');
+        fbq('track', 'PageView');
+        fbq('track', 'ViewContent', { content_name: 'Scalpi Advertorial', content_type: 'article' });
+        // Klaviyo
+        var ks=document.createElement('script');ks.async=true;
+        ks.src='https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=S3D76Q';
+        document.head.appendChild(ks);
+        // Microsoft Clarity
+        (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src='https://www.clarity.ms/tag/'+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window,document,'clarity','script','REPLACE_WITH_CLARITY_PROJECT_ID');
+      }
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(loadTrackers, { timeout: 3000 });
+      } else {
+        setTimeout(loadTrackers, 1000);
+      }
+    })();
+  </script>
 </body>
 </html>
